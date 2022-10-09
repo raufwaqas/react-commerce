@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable, action } from "mobx";
+import { makeAutoObservable, observable, action } from 'mobx';
 
 export class LoaderState {
   constructor() {

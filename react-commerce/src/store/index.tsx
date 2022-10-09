@@ -1,6 +1,6 @@
-import { CartState } from "./states/CartState";
-import { DataState } from "./states/DataState";
-import { LoaderState } from "./states/LoaderState";
+import { CartState } from './states/CartState';
+import { DataState } from './states/DataState';
+import { LoaderState } from './states/LoaderState';
 
 class Store {
   cartState: CartState;
