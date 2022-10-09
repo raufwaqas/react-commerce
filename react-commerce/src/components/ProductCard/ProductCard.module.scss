@@ -1,0 +1,40 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.productItem {
+  position: relative;
+  border: 1px solid #f5f4f4;
+}
+.pcard_title {
+  font-family: 'Tenor Sans', sans-serif !important;
+  line-height: 1.4rem;
+  color: $deepred !important;
+}
+.productItem__content {
+  padding: 20px;
+  @include flexbox(column, null, null, 5px, null);
+}
+
+.product__Img__Area {
+  @include flexbox(row, center, null, null, null);
+  // height: 460px;
+}
+
+.labelTag {
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: $deepred;
+  color: $white;
+  padding: 5px 18px;
+}
+
+.product__img {
+  width: 100%;
+  object-fit: contain;
+  filter: $drop-shadow;
+  &:hover {
+    filter: $drop-shadow-hover;
+  }
+}

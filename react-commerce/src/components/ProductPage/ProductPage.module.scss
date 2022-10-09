@@ -1,0 +1,6 @@
+@use '../../scss/mixin' as *;
+
+.productPage {
+  @include flexbox(row, center, center, 60px, wrap);
+  padding: 40px;
+}

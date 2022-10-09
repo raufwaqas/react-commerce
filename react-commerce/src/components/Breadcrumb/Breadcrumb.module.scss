@@ -1,0 +1,22 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.breadcrumb_block {
+  @include flexbox(row, center, center, null, wrap);
+  background-color: $mediumpink;
+  height: 155px;
+}
+.breadcrum_block_nav {
+  @include flexbox(row, center, center, 5px, null);
+}
+.breadcrumb_block_detail {
+  @include flexbox(column, center, center, 8px, null);
+  padding: 15px 0px 0px 0px;
+}
+.breadcrumb_block_title {
+  font-family: $main-font;
+  font-size: $medium-font-size;
+  text-transform: uppercase;
+  color: $deepred;
+}

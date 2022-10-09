@@ -1,0 +1,69 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.om_oss_block {
+  padding: $block-padding;
+}
+.om_oss_block_om {
+  @include flexbox(column, center, center, null, null);
+  padding: $block-padding;
+}
+.om_oss_block_om_rubrik {
+  @include flexbox(column, center, center, null, wrap);
+  width: $max-width;
+}
+.om_oss_block_beskrivning {
+  @include font(0.95rem, 1.65rem, $mediumgrey, 0.2px);
+}
+.rubrik {
+  font-family: 'Mrs Saint Delafield', cursive;
+  @include font(2.8rem, 1.65rem, $darkpink, null);
+}
+.om_oss_kortbeskrv {
+  margin: 0px 0px 40px 0px;
+}
+.om_oss_block_produkt {
+  @include flexbox(row, center, center, null, wrap);
+  background-color: $mediumpink;
+}
+.om_oss_block_inner {
+  @include flexbox(row, center, center, null, wrap);
+  width: $max-width;
+}
+.om_oss_block_bild {
+  @include height(500px);
+}
+.om_oss_block_produkt_left {
+  @include flexbox(column, center, flex-start, null, wrap);
+  width: $half-block;
+  padding: 50px 0px 20px 0px;
+}
+.om_oss_block_kvalite {
+  @include flexbox(row, center, center, null, wrap);
+  min-height: 400px;
+}
+.om_oss_block_kvalite_inner {
+  width: $max-width;
+  @include flexbox(row, center, center, 40px, wrap);
+  padding: $block-padding;
+}
+.om_oss_block_kvalite_1,
+.om_oss_block_kvalite_2,
+.om_oss_block_kvalite_3 {
+  @include flexbox(column, center, center, null, wrap);
+  width: 300px;
+}
+.om_oss_icons {
+  height: 40px;
+}
+.om_oss_block_heading{
+  padding: 20px 0px 0px 0px;
+}
+dfn {
+  font-style: normal;
+  font-size: 0.745rem;
+  letter-spacing: .4px;
+  text-align: center;
+  color: $darkgrey;
+}

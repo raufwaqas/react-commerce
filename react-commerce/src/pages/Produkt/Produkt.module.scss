@@ -1,0 +1,44 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+.container {
+  display: flex;
+  justify-content: center !important;
+  padding: $block-padding;
+}
+.container__inner {
+  display: flex;
+  width: 90vw;
+}
+.ProductsParent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1600px) {
+  .ProductsParent {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .ProductsParent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .ProductsParent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ProductsParent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 568px) {
+  .ProductsParent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

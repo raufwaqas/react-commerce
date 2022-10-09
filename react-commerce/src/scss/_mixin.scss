@@ -1,0 +1,56 @@
+@mixin flexbox($direction, $jc, $ai, $gap, $wrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin center_transform() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+@mixin button(
+  $button-bg,
+  $button-border,
+  $button-border-color,
+  $button-pad,
+  $button-size,
+  $button-line-height,
+  $height-button,
+  $button-radius
+) {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 0;
+  padding: 10px $button-pad 0 $button-pad;
+  background: $button-bg;
+  border: $button-border solid $button-border-color;
+  font-size: $button-size;
+  line-height: $button-line-height;
+  height: $height-button;
+  position: relative;
+  @include radius($button-radius);
+}
+
+@mixin font($font-s, $font-h, $font-c, $font-lsp) {
+  font-size: $font-s;
+  line-height: $font-h;
+  color: $font-c;
+  letter-spacing: $font-lsp;
+}
+@mixin grid($nr, $fr, $gap) {
+  display: grid;
+  grid-template-columns: repeat($nr, $fr(fr));
+}
+@mixin height($height) {
+  height: $height;
+}
