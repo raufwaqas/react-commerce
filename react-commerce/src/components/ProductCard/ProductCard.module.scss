@@ -79,11 +79,9 @@
   display: inline-block;
 }
 .buy_button {
-  display: inline-block;
-  right: 0px;
+  visibility: hidden;
+  z-index: 999;
 }
-.button {
-  width: 100px;
-  height: 45px;
-  background-color: black;
+.button:hover {
+  visibility: visible;
 }

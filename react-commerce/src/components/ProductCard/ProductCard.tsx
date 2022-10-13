@@ -1,5 +1,5 @@
 import styles from './ProductCard.module.scss';
-import React, { FC } from 'react';
+import React, { useState, FC } from 'react';
 import Text from '../Text/Text';
 import { IProductCard } from '../../../../types';
 import Btn from '../Buttons/Btn';
@@ -12,7 +12,9 @@ const ProductCard: FC<IProductCard> = ({
   shortdesc,
   colorgroup,
   label,
+  qty,
 }) => {
+  let [quantity, setQuantity] = useState(qty);
   return (
     <a href={`/produkt/${id}`} className={styles.product_container}>
       {label && (
@@ -65,8 +67,11 @@ const ProductCard: FC<IProductCard> = ({
             <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
           </span>
           <span className={styles.buy_button}>
-            <Btn bgcolor='dark' onClick={() => {}} text='KÖP NU' />
-            {/* <button className={styles.button}> Köp NU </button> */}
+            <Btn
+              bgcolor='dark'
+              onClick={() => setQuantity(quantity + 1)}
+              text='KÖP NU'
+            />
           </span>
         </span>
       </div>

@@ -29,6 +29,7 @@ interface IProductCard {
   label: String;
   colorgroup?: String;
   slug?: String;
+  qty: number;
 }
 
 interface IProductPageProps {

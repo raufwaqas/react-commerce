@@ -41,8 +41,16 @@ const Home = () => {
             >
               <section className={styles.ProductsParent}>
                 {productsData?.map((item, index) => {
-                  let { _id, img, name, price, colorgroup, shortdesc, label } =
-                    item;
+                  let {
+                    _id,
+                    img,
+                    name,
+                    price,
+                    colorgroup,
+                    shortdesc,
+                    label,
+                    qty,
+                  } = item;
                   return (
                     <ProductCard
                       id={_id}
@@ -53,6 +61,7 @@ const Home = () => {
                       colorgroup={colorgroup}
                       shortdesc={shortdesc}
                       label={label}
+                      qty={qty}
                     />
                   );
                 })}
