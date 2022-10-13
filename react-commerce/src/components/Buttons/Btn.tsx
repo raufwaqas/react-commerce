@@ -1,12 +1,5 @@
 import React from 'react';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text?: string;
-  leftIcon?: string;
-  rightIcon?: string;
-  bgcolor: string;
-  onClick?: () => void;
-}
+import { ButtonProps } from '../../../../types';
 
 const Btn: React.FC<ButtonProps> = ({
   text,

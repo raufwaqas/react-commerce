@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
 import ImageGallery from './ImageGallery';
 import ProductTitleSection from './ProductTitleSection';
 import styles from './ProductPage.module.scss';
-import { IData, Data } from '../../components/Data/Data';
-import { socialmedia } from '../Data/social';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import { NavItem } from '../Data/DataHeader';
+import { IProductPageProps } from '../../../../types';
 
-const ProductPage = ({
+const ProductPage: FC<IProductPageProps> = ({
   artnr,
   img,
   name,
   price,
   volume,
-  desc,
-  shortdesc,
-  ingredients,
-  isSelected,
   colorgroup,
   ean,
-  slug,
-}: IData) => {
+  shortdesc,
+  isSelected,
+  onClick,
+  quantity,
+}) => {
   return (
     <main className='sida' aria-label='Product page'>
       <Breadcrumb
@@ -45,8 +43,9 @@ const ProductPage = ({
               price={price}
               shortdesc={shortdesc}
               volume={volume}
+              qty={quantity}
               isSelected={isSelected}
-              qty={1}
+              onClick={onClick}
             />
           </div>
         </div>

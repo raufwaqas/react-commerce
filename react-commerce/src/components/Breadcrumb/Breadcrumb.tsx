@@ -1,22 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Text from '../Text/Text';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { NavItem } from '../Data/DataHeader';
+import React, { useRef, FC } from 'react';
+import { Link } from 'react-router-dom';
 import Styles from './Breadcrumb.module.scss';
+import { BreadcrumbProps } from '../../../../types';
 
-interface BreadcrumbProps {
-  title: String;
-  path: String;
-  pagepath: string;
-  sectionpath: string;
-  tabIndex?: number;
-}
-const Breadcrumb = ({
+const Breadcrumb: FC<BreadcrumbProps> = ({
   title,
   path,
   pagepath,
   sectionpath,
-}: BreadcrumbProps) => {
+}) => {
   const listHeadingRef = useRef(null);
   return (
     <>
@@ -25,11 +17,7 @@ const Breadcrumb = ({
         role='navigation'
         aria-label='Sub Navigation'
       >
-        <div
-          className='breadcrumb_block_wrapper'
-
-          ref={listHeadingRef}
-        >
+        <div className='breadcrumb_block_wrapper' ref={listHeadingRef}>
           <div className={Styles.breadcrumb_block_detail}>
             <span
               className={Styles.breadcrumb_block_title}

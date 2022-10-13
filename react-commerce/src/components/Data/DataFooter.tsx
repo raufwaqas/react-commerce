@@ -1,16 +1,4 @@
-interface Ibrand {
-  url: string;
-  title: string;
-}
-interface IPaymentIcon {
-  icon: string;
-  title: string;
-}
-interface ISocialIcon {
-  icon: string;
-  url: string;
-  title: string;
-}
+import { Ibrand, IPaymentIcon, ISocialIcon } from '../../../../types';
 
 export const brand: Ibrand[] = [
   {

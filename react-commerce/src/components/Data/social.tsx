@@ -1,8 +1,5 @@
-interface ISocialmedia {
-  url: string;
-  title: string;
-  link: string;
-}
+import { ISocialmedia } from '../../../../types';
+
 export const socialmedia: ISocialmedia[] = [
   {
     url: 'https://d3studio.se/react/img/icons/fb.svg',

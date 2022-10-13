@@ -1,23 +1,6 @@
-export interface IData {
-  id: number;
-  artnr: number;
-  img: string;
-  name: string;
-  price: number;
-  ean: number | string;
-  volume: string;
-  desc: string;
-  shortdesc: string;
-  ingredients: string;
-  tag: string;
-  colorgroup: string;
-  timestamp: number;
-  isSelected?: boolean;
-  label: string;
-  slug: string;
-  category: string;
-}
-export let Data: IData[] = [
+import { DataType } from '../../../../types';
+
+export let Data: DataType[] = [
   {
     id: 1,
     artnr: 101472,

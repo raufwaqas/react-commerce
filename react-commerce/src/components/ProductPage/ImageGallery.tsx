@@ -1,21 +1,12 @@
-import { findAllByLabelText, findByTitle } from '@testing-library/react';
-import React from 'react';
-import { Data, IData } from '../Data/Data';
-// import '../Data/Data';
+import React, { FC } from 'react';
+import { ImageGalleryProps } from '../../../../types';
 
-interface IImageGalleryProps {
-  img: string;
-  name: string;
-  shortdesc?: string;
-  colorgroup: string;
-}
-
-const ImageGallery = ({
+const ImageGallery: FC<ImageGalleryProps> = ({
   img,
   name,
   colorgroup,
   shortdesc,
-}: IImageGalleryProps | IData) => {
+}) => {
   return (
     <div className='Product-page-image'>
       <div className='imge-gallery'>

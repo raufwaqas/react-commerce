@@ -1,12 +1,4 @@
-export interface ICarousel {
-  img: string;
-  name: string;
-  produktbild: string;
-  shortdesc: string;
-  colorgroup: string;
-  ean: number | string;
-  artnr: number;
-}
+import { ICarousel } from '../../../../types';
 
 export let Carousel: ICarousel[] = [
   {

@@ -6,14 +6,32 @@
   position: relative;
   border: 1px solid #f5f4f4;
 }
+.ny {
+  @include flexbox(column, center, center, null, null);
+  background-color: $deepred;
+  color: $white;
+  height: 28px;
+  width: 60px;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  text-transform: uppercase;
+}
 .pcard_title {
   font-family: 'Tenor Sans', sans-serif !important;
-  line-height: 1.4rem;
+  line-height: 1.8rem;
   color: $deepred !important;
+  font-size: 1.3rem;
+  display: flex;
+  flex-grow: 1;
+  height: 30px;
+  overflow: hidden;
 }
 .productItem__content {
   padding: 20px;
   @include flexbox(column, null, null, 5px, null);
+  justify-content: space-between;
+  height: 180px;
 }
 
 .product__Img__Area {
@@ -29,7 +47,15 @@
   color: $white;
   padding: 5px 18px;
 }
-
+.product_desc_1 {
+  font-size: 0.85rem;
+  color: $darkgrey;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+  display: flex;
+  height: 41px;
+  overflow: hidden;
+}
 .product__img {
   width: 100%;
   object-fit: contain;
@@ -37,4 +63,27 @@
   &:hover {
     filter: $drop-shadow-hover;
   }
+}
+.produkt_price {
+  font-weight: 800;
+  color: #222222;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-grow: 8;
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.price {
+  display: inline-block;
+}
+.buy_button {
+  display: inline-block;
+  right: 0px;
+}
+.button {
+  width: 100px;
+  height: 45px;
+  background-color: black;
 }

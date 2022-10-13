@@ -1,18 +1,6 @@
-interface Ibrand {
-  url: string;
-  title: string;
-}
-interface Inav {
-  name: string;
-  path: string;
-  slug: string;
-}
+import { CompanyLogo, Inav, Icart } from '../../../../types';
 
-interface Icart {
-  icon: string;
-}
-
-export const brand: Ibrand[] = [
+export const Logo: CompanyLogo[] = [
   {
     url: 'https://d3studio.se/react/w-a-klinique-loga.svg',
     title: 'W&A Klinique',

@@ -1,34 +1,30 @@
-import Text from '../Text/Text';
-import { Data, IData } from '../Data/Data';
-import { useNavigate } from 'react-router-dom';
 import styles from './ProductCard.module.scss';
+import React, { FC } from 'react';
+import Text from '../Text/Text';
+import { IProductCard } from '../../../../types';
+import Btn from '../Buttons/Btn';
 
-const ProductCard = ({
+const ProductCard: FC<IProductCard> = ({
+  id,
   img,
   name,
   price,
   shortdesc,
-  label,
   colorgroup,
-  ean,
-  slug,
-}: IData) => {
-  let navigate = useNavigate();
+  label,
+}) => {
   return (
-    <section
-      onClick={() => navigate(`/produkt/${ean}`)}
-      className={styles.productItem}
-      aria-label={`${name}`}
-      role='link'
-    >
+    <a href={`/produkt/${id}`} className={styles.product_container}>
+      {label && (
+        <span className={styles.ny} aria-hidden='true'>
+          {label}
+        </span>
+      )}
       <div
         className={`${styles.product__Img__Area} ${colorgroup}`}
         aria-label={`Picture of ${name}`}
         role='img'
       >
-        <span className={styles.labelTag} aria-hidden='true'>
-          Ny
-        </span>
         <div className='p_cart'>
           <span className='besok'>
             <img
@@ -54,7 +50,7 @@ const ProductCard = ({
         className={styles.productItem__content}
         aria-label='Product name, short description and price area'
       >
-        <span aria-label='Product Name'>
+        <span aria-label='Product Name' className={styles.pcard_title}>
           <Text
             fontSize={styles.pcard_title}
             text={`${name}`}
@@ -62,22 +58,19 @@ const ProductCard = ({
           />
         </span>
         <span aria-label='Product short description'>
-          <Text
-            fontSize='small-text'
-            text={`${shortdesc}`}
-            aria-label={`${shortdesc}`}
-          />
+          <p className={styles.product_desc_1}>{`${shortdesc}`}</p>
         </span>
-        <span aria-label='Product price'>
-          <Text
-            fontSize='h4'
-            fontWeight='font-bold'
-            text={`${price} Kr`}
-            aria-label={`${price} Kr`}
-          />
+        <span aria-label='Product price' className={styles.produkt_price}>
+          <span className={styles.price}>
+            <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
+          </span>
+          <span className={styles.buy_button}>
+            <Btn bgcolor='dark' onClick={() => {}} text='KÖP NU' />
+            {/* <button className={styles.button}> Köp NU </button> */}
+          </span>
         </span>
       </div>
-    </section>
+    </a>
   );
 };
 

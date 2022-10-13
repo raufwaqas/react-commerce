@@ -5,6 +5,9 @@
 .om_oss_block {
   padding: $block-padding;
 }
+.top_margin {
+  padding: 80px 0px 0px 0px !important;
+}
 .om_oss_block_om {
   @include flexbox(column, center, center, null, null);
   padding: $block-padding;
@@ -57,13 +60,13 @@
 .om_oss_icons {
   height: 40px;
 }
-.om_oss_block_heading{
+.om_oss_block_heading {
   padding: 20px 0px 0px 0px;
 }
 dfn {
   font-style: normal;
   font-size: 0.745rem;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   text-align: center;
   color: $darkgrey;
 }

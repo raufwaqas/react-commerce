@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import { brand, payment, social } from '../Data/DataFooter';
-import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer_section_main}>
       <div className={styles.footer_section_inner}>

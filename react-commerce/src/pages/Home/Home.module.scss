@@ -1,19 +1,19 @@
 @use '../../scss/mixin' as *;
 @use '../../scss/variables' as *;
 @use '../../scss/Globals.scss' as *;
-.container {
+@use '../Omoss/Omss.module.scss' as *;
+
+.product_container {
   display: flex;
-  justify-content: center !important;
+  justify-content: center;
   padding: $block-padding;
 }
-.container__inner {
-  display: flex;
-  width: 90vw;
-}
+
 .ProductsParent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  width: 85vw;
 }
 @media (max-width: 1600px) {
   .ProductsParent {

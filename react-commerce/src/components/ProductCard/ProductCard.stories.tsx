@@ -29,5 +29,4 @@ Primary.args = {
   price: Data[0].price,
   shortdesc: Data[0].shortdesc,
   colorgroup: Data[0].colorgroup,
-  ean: 12312312,
 };
