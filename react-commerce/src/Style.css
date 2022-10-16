@@ -510,6 +510,8 @@ hr.solid3 {
     display: none;
   }
 }
+
+.product_card_btn,
 .header__menu:focus {
   background-color: var(--darkpink);
   outline: none;
@@ -659,4 +661,16 @@ nav [aria-current='page'] {
 }
 ol {
   margin-bottom: 0rem !important;
+}
+.product_card_btn {
+  width: 80px;
+  height: 40px;
+  color: var(--white);
+  border-radius: 4px;
+}
+.product-page-content {
+  max-width: 460px;
+}
+ol {
+  padding-left: 0px !important;
 }

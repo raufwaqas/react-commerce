@@ -1,0 +1,57 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.cart_article_inner_section {
+  display: flex;
+  padding: 10px 0px;
+}
+.cart_article_inner_section:last-child {
+  border-bottom: 0.5px solid $darkgrey;
+}
+.container_product_img_small {
+  width: 80px;
+  height: 80px;
+}
+
+.styles.cart_article_base {
+  flex-grow: 1;
+  margin-bottom: 30px;
+  min-width: 0;
+}
+
+.cart_product_cart_block {
+  flex-grow: 1;
+}
+.cart_product_block_contents {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  overflow: hidden;
+}
+.cart_title {
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.test {
+  width: 100%;
+}
+.qty_area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.qty_button {
+  border: 0px;
+  background-color: initial;
+  padding-bottom: 14px;
+}
+.bin_icon {
+  width: 17px;
+  border: 0px;
+  background-color: inherit;
+  align-items: center;
+  padding-bottom: 18px;
+}

@@ -1,6 +1,5 @@
 import ProductCard from '../../components/ProductCard/ProductCard';
 import styles from './Home.module.scss';
-
 import '../../Style.css';
 import { axiosInstance } from '../../axios/axiosHttps';
 import { useState, useEffect, SetStateAction } from 'react';
@@ -48,7 +47,7 @@ const Home = () => {
               </div>
             ) : (
               <section className={styles.ProductsParent}>
-                {productsData?.slice(0, 5).map((item) => {
+                {productsData?.slice(0, 10).map((item) => {
                   let {
                     _id,
                     img,

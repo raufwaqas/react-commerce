@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Nav: FC = () => {
   return (
-    <header className={styles.header}>
-      <nav className={styles.navbar}>
+    <header className={styles.header} role='tree' aria-details='Navigation'>
+      <nav className={styles.navbar} aria-controls='menu'>
         <a href={NavItem[0].path} className={styles.brand}>
           <img
             src={Logo[0].url}
@@ -16,34 +16,55 @@ const Nav: FC = () => {
             className='header__logo--image'
           />
         </a>
-        <input type='checkbox' id={styles.nav} className={styles.hidden} />
-        <label htmlFor='nav' className={styles.nav_toggle}>
+        <input
+          type='checkbox'
+          id={styles.nav}
+          className={styles.hidden}
+          aria-hidden='true'
+        />
+        <label htmlFor='nav' className={styles.nav_toggle} aria-hidden='true'>
           <span></span>
           <span></span>
           <span></span>
         </label>
-        <div className={styles.wrapper}>
-          <ol className={styles.menu}>
-            <ul className={styles.menu_item}>
-              <a href={NavItem[0].path}>{NavItem[0].name}</a>
+        <div
+          className={styles.wrapper}
+          aria-label='navigation'
+          role='navigation'
+        >
+          <ol className={styles.menu} aria-label='navigation bar'>
+            <ul className={styles.menu_item} aria-label={NavItem[0].name}>
+              <a href={NavItem[0].path} aria-hidden='true'>
+                {NavItem[0].name}
+              </a>
             </ul>
-            <ul className={styles.menu_item}>
-              <a href={NavItem[1].path}>{NavItem[1].name}</a>
+            <ul className={styles.menu_item} aria-label={NavItem[1].name}>
+              <a href={NavItem[1].path} aria-hidden='true'>
+                {NavItem[1].name}
+              </a>
             </ul>
-            <ul className={styles.menu_item}>
-              <a href={NavItem[2].path}>{NavItem[2].name}</a>
+            <ul className={styles.menu_item} aria-label={NavItem[2].name}>
+              <a href={NavItem[2].path} aria-hidden='true'>
+                {NavItem[2].name}
+              </a>
             </ul>
-            <ul className={styles.menu_item}>
-              <a href={NavItem[3].path}>{NavItem[3].name}</a>
+            <ul className={styles.menu_item} aria-label={NavItem[3].name}>
+              <a href={NavItem[3].path} aria-hidden='true'>
+                {NavItem[3].name}
+              </a>
             </ul>
           </ol>
         </div>
-        <div className='header__cartblock'>
-          <Link to='/cart'>
-            <li className='bi-basket2'></li>
+        <div
+          className='header__cartblock'
+          aria-label='Varkorg'
+          aria-details='Varkorg'
+        >
+          <Link to='/cart' aria-hidden='true'>
+            <li className='bi-basket2' aria-hidden='true'></li>
           </Link>
 
-          <li className='shopping-icon'>1</li>
+          <li className='shopping-icon' aria-hidden='true'></li>
         </div>
       </nav>
     </header>

@@ -14,6 +14,7 @@ $darkgrey: #222222;
 $black: #000000;
 $ljusgrey: #f7f7f7;
 $mediumgrey: #444444;
+$grey: #e3e3e3;
 
 $drop-shadow: drop-shadow(6px 4px 12px rgba(255, 255, 255, 0.8));
 $drop-shadow-hover: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
@@ -35,9 +36,9 @@ $base-font-family: 'Lato', sans-serif;
 $custom-font-family: 'Lato', sans-serif;
 $title-font-family: $custom-font-family;
 $min-width: 320px;
-$max-width: 75vw;
+$max-width: 85vw;
 $base-bg: $white;
-$medium-font-size: 0.8rem;
+$small-font-size: 0.8rem;
 $base-font-size: 1rem;
 $base-line-height: 1.2rem;
 $link-color: $darkpink;
@@ -45,6 +46,7 @@ $transition: all 0.3s linear;
 $medium-font-size: 2.2rem;
 $block-padding: 40px 0px;
 $half-block: 500px;
+$height-calc: calc(100vh - 300px);
 
 /* background varition */
 

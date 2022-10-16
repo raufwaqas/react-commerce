@@ -9,6 +9,7 @@ import Kontakt from './Kontakt/Kontakt';
 import Footer from '../components/Footer/Footer';
 import TopHeader from '../components/TopHeader/TopHeader';
 import Cart from './Cart/Cart';
+
 export {
   Home,
   ProductDetails,

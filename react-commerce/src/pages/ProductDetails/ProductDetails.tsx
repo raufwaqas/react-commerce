@@ -8,6 +8,8 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState<any>([]);
   const [isSelected, setIsSelected] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  // const [img, setImage] = useState();
+  // const [price, setPrice] = useState();
 
   useEffect(() => {
     (async () => {
@@ -26,7 +28,7 @@ const ProductDetails = () => {
           console.log(search);
           if (search === undefined) {
             setIsSelected(false);
-            setQuantity(1);
+            setQuantity(quantity);
           } else {
             setIsSelected(true);
             setQuantity(search?.quantity);
@@ -34,7 +36,7 @@ const ProductDetails = () => {
         })
         .catch((err) => console.log(err));
     })();
-  }, [params?.id]);
+  }, [params?.id, quantity]);
 
   const onClick = async (quantity: number) => {
     console.log('cart item button');
@@ -47,6 +49,8 @@ const ProductDetails = () => {
           userId: '123qweasdzxc',
           productId: params?.id,
           quantity: quantity,
+          // img: img,
+          // price: price,
         },
       })
         .then((res) => {
@@ -81,7 +85,7 @@ const ProductDetails = () => {
         </div>
       ) : (
         <ProductPage
-          artnr={132423231}
+          artnr={1111}
           ean={132423231}
           shortdesc={desc}
           {...productDetails}
@@ -95,22 +99,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import { Data, IData } from '../../components/Data/Data';
-// import ProductPage from '../../components/ProductPage/ProductPage';
-
-// const ProductDetails = () => {
-//   let params = useParams();
-
-//   let results: IData = Data.find((x) => x.ean === Number(params.id))!;
-
-//   return (
-//     <div className='sida'>
-//       <ProductPage {...results} isSelected={false} />
-//     </div>
-//   );
-// };
-
-// export default ProductDetails;

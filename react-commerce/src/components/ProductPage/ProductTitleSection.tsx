@@ -107,7 +107,6 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               onClick={() => setQuantity(quantity + 1)}
               bgcolor='small-dark-grey'
               text='>'
-              // role='button'
             />
           </div>
         </div>
@@ -120,7 +119,6 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
                 onClick(quantity);
               }}
               text='Ta bort'
-              // role='button'
             />
           ) : (
             <Btn
@@ -131,7 +129,6 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
                 onClick(quantity);
               }}
               text='KÖP NU'
-              // role='button'
             />
           )}
         </div>

@@ -4,7 +4,11 @@ import { brand, payment, social } from '../Data/DataFooter';
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer_section_main}>
+    <footer
+      className={styles.footer_section_main}
+      aria-label='Company Information'
+      role='cell'
+    >
       <div className={styles.footer_section_inner}>
         <div className={styles.foter_section_2} aria-label='Company Logo'>
           <img
@@ -14,7 +18,10 @@ const Footer: React.FC = () => {
           />
         </div>
         <div className={styles.foter_seprator}></div>
-        <div className={styles.foter_section_1}>
+        <div
+          className={styles.foter_section_1}
+          aria-label='Payment & Socialmedia icons'
+        >
           <span
             className={styles.foter_section_icons}
             aria-label='Follow us on social media'
@@ -61,33 +68,29 @@ const Footer: React.FC = () => {
             <img
               src={payment[1].icon}
               alt={payment[1].title}
-              aria-label={payment[0].title}
+              aria-label={payment[1].title}
               className={styles.payment_icons}
             />
             <img
               src={payment[2].icon}
               alt={payment[2].title}
-              aria-label={payment[0].title}
+              aria-label={payment[2].title}
               className={styles.payment_icons}
             />
             <img
               src={payment[3].icon}
               alt={payment[3].title}
-              aria-label={payment[0].title}
+              aria-label={payment[3].title}
               className={styles.payment_icons}
             />
           </span>
           <span
             className={styles.foter_section_copyright}
-            aria-label='Follow us on social media'
+            aria-label=' Copyright'
           >
-            Copyright@ 2022 Design & developed by Waqas Rauf
+            © Copyright 2022 Design & developed by Waqas Rauf
           </span>
         </div>
-        <div
-          className={styles.foter_section_3}
-          aria-label='Payment Methods'
-        ></div>
       </div>
     </footer>
   );

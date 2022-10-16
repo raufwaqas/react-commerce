@@ -1,4 +1,11 @@
-.cartParent {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 60px auto;
+}
+.cart_container {
+  width: 100%;
 }

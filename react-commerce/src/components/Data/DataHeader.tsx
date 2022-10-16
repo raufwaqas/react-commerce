@@ -24,8 +24,13 @@ export const NavItem: Inav[] = [
   },
   {
     name: 'KONTAKTA OSS',
-    path: 'kontakt',
-    slug: '/kontakt',
+    path: '/kontakt',
+    slug: 'kontakt',
+  },
+  {
+    name: 'Kassa',
+    path: '/cart',
+    slug: 'cart',
   },
 ];
 

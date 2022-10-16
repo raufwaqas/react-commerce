@@ -6,6 +6,8 @@
   @include flexbox(row, center, center, wrap, null);
   min-height: 300px;
   background-color: $darkgrey;
+  bottom: 0;
+  width: 100%;
 }
 .footer_section_inner {
   @include flexbox(row, null, null, null, wrap);

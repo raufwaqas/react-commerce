@@ -1,0 +1,60 @@
+@use '../../scss/mixin' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/Globals.scss' as *;
+
+.main_content_block_1 {
+  min-width: 320px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: $block-padding;
+}
+.description {
+  display: flex;
+  align-items: center;
+  padding-left: 5p;
+  height: 60px;
+}
+.description_title {
+  display: flex;
+  background-color: $mediumpink;
+  color: $deepred;
+  font-size: $small-font-size;
+  border-top: 2px solid $deepred;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 60px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+}
+.product_description_block {
+  display: flex;
+  border: 2px solid $mediumpink;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px;
+}
+.rubrik {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+  color: $deepred;
+}
+.beskrivning {
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: 0.4px;
+  color: $text;
+}
+@media (max-width: 960px) {
+  .main_content_block_1 {
+    width: 460px;
+  }
+}
+@media (max-width: 768px) {
+  .main_content_block_1 {
+    width: 460px;
+    // padding: 40px 40px;
+  }
+}

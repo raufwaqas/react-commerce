@@ -2,6 +2,7 @@ import React from 'react';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import { NavItem } from '../../components/Data/DataHeader';
 import styles from './Omss.module.scss';
+
 const Omoss = () => {
   return (
     <main className='sida' Aria-label='Om W&A Klinique'>

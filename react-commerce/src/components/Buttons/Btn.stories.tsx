@@ -16,6 +16,7 @@ export default {
         'small-primary',
         'small-light-grey',
         'small-dark-grey',
+        'product_card_btn'
       ],
       control: { type: 'select' },
       // options: ['full', 'half', 'small'],

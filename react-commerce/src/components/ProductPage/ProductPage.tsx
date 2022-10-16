@@ -5,6 +5,7 @@ import styles from './ProductPage.module.scss';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import { NavItem } from '../Data/DataHeader';
 import { IProductPageProps } from '../../../../types';
+import ProductInfo from './ProductInfo';
 
 const ProductPage: FC<IProductPageProps> = ({
   artnr,
@@ -18,6 +19,8 @@ const ProductPage: FC<IProductPageProps> = ({
   isSelected,
   onClick,
   quantity,
+  desc,
+  ingredients,
 }) => {
   return (
     <main className='sida' aria-label='Product page'>
@@ -50,6 +53,7 @@ const ProductPage: FC<IProductPageProps> = ({
           </div>
         </div>
       </section>
+      <ProductInfo desc={desc} ingredient={ingredients} />
     </main>
   );
 };

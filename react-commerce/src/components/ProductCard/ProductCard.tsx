@@ -27,20 +27,6 @@ const ProductCard: FC<IProductCard> = ({
         aria-label={`Picture of ${name}`}
         role='img'
       >
-        <div className='p_cart'>
-          <span className='besok'>
-            <img
-              src='https://d3studio.se/react/img/icons/visit.svg'
-              alt='Visa Produkt'
-            />
-          </span>
-          <span className='add_to_cart'>
-            <img
-              src='https://d3studio.se/react/img/icons/add-to-cart.svg'
-              alt='Add to cart'
-            />
-          </span>
-        </div>
         <img
           className={`${styles.product__img} img-fluid besok add_to_cart`}
           src={img}
@@ -67,11 +53,13 @@ const ProductCard: FC<IProductCard> = ({
             <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
           </span>
           <span className={styles.buy_button}>
-            <Btn
-              bgcolor='dark'
-              onClick={() => setQuantity(quantity + 1)}
-              text='KÖP NU'
-            />
+            <span className={styles.buy_button_display}>
+              <Btn
+                bgcolor='product_card_btn'
+                onClick={() => setQuantity(quantity + 1)}
+                text='Läs mer'
+              />
+            </span>
           </span>
         </span>
       </div>

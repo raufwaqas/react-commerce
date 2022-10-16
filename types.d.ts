@@ -1,6 +1,3 @@
-import React from 'react';
-import Btn from './react-commerce/src/components/Buttons/Btn';
-
 export interface DataType {
   id: number;
   artnr: number;
@@ -45,6 +42,7 @@ interface IProductPageProps {
   isSelected: boolean;
   onClick: Function;
   quantity: number;
+  desc: string;
 }
 
 interface IProductTitleSectionProps {
@@ -64,7 +62,14 @@ interface ImageGalleryProps {
   colorgroup: string;
   shortdesc?: string;
 }
-
+interface IcartSection {
+  img: string;
+  name: string;
+  price: number;
+  shortdesc: string;
+  qty: number;
+  _Id: number;
+}
 interface BreadcrumbProps {
   title: String;
   path: String;
@@ -86,6 +91,10 @@ interface IProductPageProps {
   isSelected: boolean;
   onClick: Function;
   quantity: number;
+}
+export interface ProductInfoProps {
+  desc: string;
+  ingredient: String;
 }
 
 interface Ibrand {
@@ -143,4 +152,18 @@ interface ISocialmedia {
   url: string;
   title: string;
   link: string;
+}
+interface OrderFormProps {
+  FullName: string;
+  Email: string;
+  MobileNumber: string;
+  StreetAdress: string;
+  City: string;
+  Land: string;
+  ZipCode: number;
+  NameOnCard: string;
+  CVVNumber: number;
+  handleSubmit?: (e: React.FormEvent<HTMLInputElement>) => void;
+  CardNumber: number;
+  ValidUntil: number;
 }
