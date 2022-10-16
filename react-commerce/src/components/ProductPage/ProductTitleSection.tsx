@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 import Text from '../Text/Text';
 import Btn from '../Buttons/Btn';
 import { socialmedia } from '../Data/social';
@@ -103,6 +104,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               text={`${quantity}`}
               aria-label='Product Quantity'
             />
+
             <Btn
               onClick={() => setQuantity(quantity + 1)}
               bgcolor='small-dark-grey'
@@ -121,15 +123,17 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               text='Ta bort'
             />
           ) : (
-            <Btn
-              bgcolor='dark'
-              leftIcon='bi-basket'
-              onClick={() => {
-                setSelected(true);
-                onClick(quantity);
-              }}
-              text='KÖP NU'
-            />
+            <Link to='/cart'>
+              <Btn
+                bgcolor='dark'
+                leftIcon='bi-basket'
+                onClick={() => {
+                  setSelected(true);
+                  onClick(quantity);
+                }}
+                text='KÖP NU'
+              />
+            </Link>
           )}
         </div>
       </div>

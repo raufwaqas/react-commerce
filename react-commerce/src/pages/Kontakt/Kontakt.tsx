@@ -1,19 +1,9 @@
 import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import { NavItem } from '../../components/Data/DataHeader';
 import styles from './Kontakt.module.scss';
 
 export const Kontakt = () => {
-  const form = useRef();
-  const sendEmail = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-
-    emailjs.sendForm('gmail', 'template_9dztrjb', 'Sw_WWFF99XrJOxYmo').then(
-      (result) => console.log(result.text),
-      (error) => console.log(error.text)
-    );
-  };
   return (
     <>
       <Breadcrumb
@@ -30,25 +20,41 @@ export const Kontakt = () => {
           style={{ border: 0 }}
           loading='lazy'
           referrerPolicy='no-referrer-when-downgrade'
+          aria-hidden='true'
         ></iframe>
-        <div className={styles.form_container}>
+        <div
+          className={styles.form_container}
+          role='form'
+          id='contact-info'
+          aria-label='Contact information'
+        >
           <h2>Kontakta oss</h2>
           <br aria-hidden='true' />
-          <form onSubmit={sendEmail}>
+          <form action='https://formspree.io/f/xpznlvea' method='POST'>
             <label htmlFor='First Name'>Full Name</label>
             <input
               type='text'
-              id='from_name'
               name='user_name'
               placeholder='Your name..'
+              required
+              autoComplete='off'
             />
             <label htmlFor='email'>Email</label>
-            <input type='email' name='user_email' placeholder='Your Email' />
+            <input
+              type='text'
+              name='email'
+              placeholder='Your email'
+              required
+              autoComplete='off'
+            />
             <label htmlFor='message'>Message</label>
             <textarea
-              id='subject'
               name='message'
               placeholder='Write something..'
+              required
+              autoComplete='off'
+              cols={30}
+              rows={10}
             ></textarea>
             <br aria-hidden='true' />
             <br aria-hidden='true' />

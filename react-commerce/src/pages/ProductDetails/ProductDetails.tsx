@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductPage from '../../components/ProductPage/ProductPage';
+import { nanoid } from 'nanoid';
 import { axiosInstance } from '../../axios/axiosHttps';
 
 const ProductDetails = () => {
@@ -8,8 +9,6 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState<any>([]);
   const [isSelected, setIsSelected] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  // const [img, setImage] = useState();
-  // const [price, setPrice] = useState();
 
   useEffect(() => {
     (async () => {
@@ -25,7 +24,7 @@ const ProductDetails = () => {
         .get(`/carts`)
         .then((res) => {
           let search = res?.data.find((x: any) => x?.productId === params?.id);
-          console.log(search);
+          // console.log(search);
           if (search === undefined) {
             setIsSelected(false);
             setQuantity(quantity);
@@ -38,19 +37,24 @@ const ProductDetails = () => {
     })();
   }, [params?.id, quantity]);
 
-  const onClick = async (quantity: number) => {
-    console.log('cart item button');
+  const onClick = async (
+    quantity: number,
+    img: string,
+    price: number,
+    title: String
+  ) => {
+    // console.log('cart item button');
     if (!isSelected) {
-      console.log('add item');
+      // console.log('add item');
       await axiosInstance({
         url: '/carts',
         method: 'post',
         data: {
-          userId: '123qweasdzxc',
+          userId: nanoid(),
           productId: params?.id,
           quantity: quantity,
-          // img: img,
-          // price: price,
+          img: img,
+          price: price,
         },
       })
         .then((res) => {
@@ -62,13 +66,13 @@ const ProductDetails = () => {
           console.log(err);
         });
     } else {
-      console.log('remove item');
+      // console.log('remove item');
       await axiosInstance
         .delete(`/carts/${params?.id}`)
         .then((res) => {
           console.log('successfully removed item from cart');
           setIsSelected(false);
-          setQuantity(1);
+          setQuantity(quantity);
         })
         .catch((err) => {
           console.log(err);
@@ -85,8 +89,8 @@ const ProductDetails = () => {
         </div>
       ) : (
         <ProductPage
-          artnr={1111}
-          ean={132423231}
+          artnr={''}
+          ean={''}
           shortdesc={desc}
           {...productDetails}
           isSelected={isSelected}

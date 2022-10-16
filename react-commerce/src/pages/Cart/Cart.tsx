@@ -9,13 +9,13 @@ import CartSectionHeader from '../../components/CartProductSection/CartSectionHe
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const [productsData, setProductData] = useState<any>([]);
-  // console.log(productsData);
+  console.log(productsData);
   useEffect(() => {
     (async () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
-          console.log('data', res?.data);
+          // console.log('data', res?.data);
           setCartData(res?.data);
         })
         .catch((err) => console.log(err));
@@ -51,17 +51,16 @@ const Cart = () => {
             </div>
           ) : (
             <div>
-              {cartData?.map((x) => {
-                const { _id, quantity, name, _Id, price, img } = x;
+              {cartData?.map((setCartData) => {
+                const { _id, quantity, name, _Id, price, img } = setCartData;
                 return (
                   <ol className={styles.cartParent} key={_id}>
                     <CartProductSection
-                      key={_id}
                       img={img}
                       name={name}
                       price={price}
-                      qty={quantity}
                       shortdesc={''}
+                      qty={quantity}
                       _Id={_Id}
                     />
                   </ol>
