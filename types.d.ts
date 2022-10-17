@@ -167,3 +167,6 @@ interface OrderFormProps {
   CardNumber: number;
   ValidUntil: number;
 }
+interface ICartTotalSection{
+  total: number;
+}

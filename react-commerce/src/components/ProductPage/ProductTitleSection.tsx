@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
 import Text from '../Text/Text';
 import Btn from '../Buttons/Btn';
 import { socialmedia } from '../Data/social';

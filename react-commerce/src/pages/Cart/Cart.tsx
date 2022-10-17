@@ -5,6 +5,7 @@ import { NavItem } from '../../components/Data/DataHeader';
 import CartProductSection from '../../components/CartProductSection/CartProductSection';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import CartSectionHeader from '../../components/CartProductSection/CartSectionHeader';
+import CartTotalSection from '../../components/CartProductSection/CartTotalSection';
 
 const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
@@ -62,7 +63,7 @@ const Cart = () => {
                     <CartProductSection
                       img={img}
                       name={name}
-                      price={price}
+                      price={price*qty}
                       shortdesc={''}
                       qty={qty}
                       _Id={_id}
@@ -73,6 +74,8 @@ const Cart = () => {
             </div>
           )}
         </div>
+        <CartTotalSection 
+            total={0}/>
         <div className={styles.order_form}></div>
       </article>
     </main>
