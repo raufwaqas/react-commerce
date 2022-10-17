@@ -7,7 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import CartSectionHeader from '../../components/CartProductSection/CartSectionHeader';
 
 const Cart = () => {
-  const [cartData, setCartData] = useState([]);
+  const [cartData, setCartData] = useState<any>([]);
   const [productsData, setProductData] = useState<any>([]);
   console.log(productsData);
   useEffect(() => {
@@ -29,7 +29,10 @@ const Cart = () => {
         await axiosInstance
           .get(`/products/find/${x?.productId}`)
           .then((res) => {
-            setProductData((prev: any) => [...prev, res?.data]);
+            
+        
+            res.data.qty = x.quantity;
+                        setProductData((prev: any) => [...prev, res?.data]);
           });
       });
     })();
@@ -51,16 +54,17 @@ const Cart = () => {
             </div>
           ) : (
             <div>
-              {cartData?.map((setCartData) => {
-                const { _id, quantity, name, _Id, price, img } = setCartData;
+              {productsData?.map((product: { _id: any; qty: any; name: any; _Id: any; price: any; img: any; }, index:number) => {
+                const { _id, qty, name, _Id, price, img } = product;
+                console.log("Cart product data", product)
                 return (
-                  <ol className={styles.cartParent} key={_id}>
+                  <ol className={styles.cartParent} key={index}>
                     <CartProductSection
                       img={img}
                       name={name}
                       price={price}
                       shortdesc={''}
-                      qty={quantity}
+                      qty={qty}
                       _Id={_Id}
                     />
                   </ol>
