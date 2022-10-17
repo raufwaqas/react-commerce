@@ -123,7 +123,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               text='Ta bort'
             />
           ) : (
-            <Link to='/cart'>
+
               <Btn
                 bgcolor='dark'
                 leftIcon='bi-basket'
@@ -133,7 +133,6 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
                 }}
                 text='KÖP NU'
               />
-            </Link>
           )}
         </div>
       </div>

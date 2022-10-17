@@ -65,7 +65,7 @@ const Cart = () => {
                       price={price}
                       shortdesc={''}
                       qty={qty}
-                      _Id={_Id}
+                      _Id={_id}
                     />
                   </ol>
                 );
