@@ -11,6 +11,7 @@ const CartProductSection: FC<IcartSection> = ({
   qty,
   _Id,
   total,
+  id,
   onClick,
 }) => {
   let [quantity, setQuantity] = useState(qty);
@@ -25,7 +26,9 @@ const CartProductSection: FC<IcartSection> = ({
       <div className={styles.area_container}>
         <article className={styles.cart_product_block_contents}>
           <div className={style.produkt_title}>
-            <p className={styles.cart_title}>{name}</p>
+            <a href={`/produkt/${_Id}`} className={styles.product_container}>
+              <p className={styles.cart_title}>{name}</p>
+            </a>
           </div>
           <div className={style.produkt_pris}>
             <p className={styles.cart_title}>{price} KR</p>

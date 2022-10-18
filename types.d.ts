@@ -71,6 +71,7 @@ interface IcartSection {
   _Id: number;
   onClick?: () => void;
   total: Number;
+  id: Number;
 }
 interface BreadcrumbProps {
   title: String;

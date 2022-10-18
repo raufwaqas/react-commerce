@@ -21,6 +21,8 @@ const Blanket = () => {
                     id='fname'
                     name='Namn'
                     placeholder='John M. Doe'
+                    required
+                    aria-required='true'
                   />
                   <label htmlFor='email'>
                     <i className='fa fa-envelope'></i> E-post
@@ -30,6 +32,8 @@ const Blanket = () => {
                     id='email'
                     name='email'
                     placeholder='john@example.com'
+                    required
+                    aria-required='true'
                   />
                   <label htmlFor='adr'>
                     <i className='fa fa-address-card-o'></i> Adress
@@ -39,6 +43,8 @@ const Blanket = () => {
                     id='adr'
                     name='adress'
                     placeholder='Adress'
+                    required
+                    aria-required='true'
                   />
                   <label htmlFor='city'>
                     <i className='fa fa-institution'></i> Postort
@@ -48,6 +54,8 @@ const Blanket = () => {
                     id='city'
                     name='city'
                     placeholder='Stockholm'
+                    required
+                    aria-required='true'
                   />
 
                   <div className={style.row}>
@@ -58,6 +66,8 @@ const Blanket = () => {
                         id='state'
                         name='state'
                         placeholder='Stockholm'
+                        required
+                        aria-required='true'
                       />
                     </div>
                     <div className={style.col_50}>
@@ -67,6 +77,8 @@ const Blanket = () => {
                         id='zip'
                         name='Postnummer'
                         placeholder='100 01'
+                        required
+                        aria-required='true'
                       />
                     </div>
                   </div>
