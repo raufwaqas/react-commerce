@@ -430,6 +430,7 @@ hr.solid3 {
 .light {
   min-width: 120px;
   height: 50px;
+  padding: 0px 10px;
 }
 .container-qty {
   display: flex;
@@ -673,4 +674,7 @@ ol {
 }
 ol {
   padding-left: 0px !important;
+}
+p {
+  margin-bottom: 0rem !important;
 }

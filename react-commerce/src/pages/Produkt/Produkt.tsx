@@ -14,7 +14,7 @@ const Home = () => {
       await axiosInstance
         .get('/products')
         .then((res) => {
-          console.log(res?.data);
+          // console.log(res?.data);
           setProductsData(res?.data);
         })
         .catch((err) => console.log(err));

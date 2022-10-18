@@ -28,9 +28,14 @@ export const NavItem: Inav[] = [
     slug: 'kontakt',
   },
   {
-    name: 'Kassa',
+    name: 'KUND VAGN',
     path: '/cart',
     slug: 'cart',
+  },
+  {
+    name: 'KASSA',
+    path: '/checkout',
+    slug: 'checkout',
   },
 ];
 

@@ -1,0 +1,107 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+  padding: $block-padding;
+}
+
+.col_25 {
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.col_50 {
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
+.col_75 {
+  -ms-flex: 75%;
+  flex: 75%;
+}
+
+.col_25,
+.col_50,
+.col_75 {
+  padding: 0 16px;
+}
+
+.container {
+  width: 80vw;
+  background-color: $ljusgrey;
+  padding: 40px 20px 20px 40px;
+  border: 1px solid $darkgrey;
+  margin: 0 auto;
+}
+
+input[type='text'] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid $ljusgrey;
+  border-radius: 3px;
+}
+input:focus-visible {
+  outline: 2px solid;
+  border-radius: 3px;
+}
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+[type='radio'] {
+  display: flex;
+  width: 60px;
+  z-index: 999;
+  opacity: 0;
+}
+[type='radio'] + img {
+  cursor: pointer;
+  cursor: pointer;
+  margin: 0px 0px 0px -60px;
+}
+
+[type='radio']:checked + img {
+  outline: 1.5px solid $darkpink;
+  opacity: 0.7;
+}
+.radio_container {
+  display: flex;
+  gap: 40px;
+  margin: -20px 0px 0px 15px;
+  padding: 0px 0px 15px 0px;
+}
+
+.icon_container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  color: $white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+@media (max-width: 800px) {
+  //   .row {
+  //     flex-direction: column-reverse;
+  //   }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}

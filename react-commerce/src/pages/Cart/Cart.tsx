@@ -6,11 +6,14 @@ import CartProductSection from '../../components/CartProductSection/CartProductS
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import CartSectionHeader from '../../components/CartProductSection/CartSectionHeader';
 import CartTotalSection from '../../components/CartProductSection/CartTotalSection';
+import Btn from '../../components/Buttons/Btn';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
   const [productsData, setProductData] = useState<any>([]);
-  console.log(productsData);
+
+  // console.log(productsData);
   useEffect(() => {
     (async () => {
       await axiosInstance
@@ -25,15 +28,13 @@ const Cart = () => {
   useEffect(() => {
     (async () => {
       if (cartData.length === 0) return;
-      console.log('cartData', cartData);
+      // console.log('cartData', cartData);
       cartData?.map(async (x: any) => {
         await axiosInstance
           .get(`/products/find/${x?.productId}`)
           .then((res) => {
-            
-        
             res.data.qty = x.quantity;
-                        setProductData((prev: any) => [...prev, res?.data]);
+            setProductData((prev: any) => [...prev, res?.data]);
           });
       });
     })();
@@ -51,31 +52,54 @@ const Cart = () => {
         <div>
           {cartData?.length === 0 ? (
             <div className='text-center my-5 fs-1 text-center'>
-              Your cart is empty
+              Din vagn är tom
             </div>
           ) : (
             <div>
-              {productsData?.map((product: { _id: any; qty: any; name: any; _Id: any; price: any; img: any; }, index:number) => {
-                const { _id, qty, name, _Id, price, img } = product;
-                console.log("Cart product data", product)
-                return (
-                  <ol className={styles.cartParent} key={index}>
-                    <CartProductSection
-                      img={img}
-                      name={name}
-                      price={price*qty}
-                      shortdesc={''}
-                      qty={qty}
-                      _Id={_id}
-                    />
-                  </ol>
-                );
-              })}
+              {productsData.map(
+                (
+                  product: {
+                    _id: any;
+                    qty: any;
+                    name: any;
+                    price: any;
+                    img: any;
+                  },
+                  index: number
+                ) => {
+                  const { _id, qty, name, price, img } = product;
+                  console.log('Cart product data', product);
+                  return (
+                    <ol className={styles.cartParent} key={index}>
+                      <CartProductSection
+                        _Id={_id}
+                        name={name}
+                        img={img}
+                        qty={qty}
+                        price={price}
+                        shortdesc={''}
+                        total={price * qty}
+                      />
+                    </ol>
+                  );
+                }
+              )}
             </div>
           )}
         </div>
-        <CartTotalSection 
-            total={0}/>
+        <CartTotalSection total={0} />
+        <div className={styles.checkout_buttons}>
+          <Link to='/produkt'>
+            <Btn
+              bgcolor='dark'
+              leftIcon='bi bi-caret-left-fill'
+              text='Fortsätt handla'
+            />
+          </Link>
+          <Link to='/checkout'>
+            <Btn bgcolor='light' rightIcon='bi bi-basket2' text='KASSA' />
+          </Link>
+        </div>
         <div className={styles.order_form}></div>
       </article>
     </main>

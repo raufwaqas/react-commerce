@@ -10,6 +10,7 @@ import {
   Footer,
   Cart,
   Kontakt,
+  Checkout,
 } from './pages';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/produkt' element={<Produkt />} />
         <Route path='/kontakt' element={<Kontakt />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

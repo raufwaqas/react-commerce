@@ -9,6 +9,7 @@ import Kontakt from './Kontakt/Kontakt';
 import Footer from '../components/Footer/Footer';
 import TopHeader from '../components/TopHeader/TopHeader';
 import Cart from './Cart/Cart';
+import Checkout from './Checkout/Checkout';
 
 export {
   Home,
@@ -22,4 +23,5 @@ export {
   Footer,
   TopHeader,
   Cart,
+  Checkout,
 };

@@ -41,7 +41,7 @@ const ProductDetails = () => {
     quantity: number,
     img: string,
     price: number,
-    title: String
+    name: String
   ) => {
     // console.log('cart item button');
     if (!isSelected) {
@@ -55,6 +55,7 @@ const ProductDetails = () => {
           quantity: quantity,
           img: img,
           price: price,
+          name: name,
         },
       })
         .then((res) => {

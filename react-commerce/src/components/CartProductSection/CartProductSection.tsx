@@ -10,6 +10,8 @@ const CartProductSection: FC<IcartSection> = ({
   shortdesc,
   qty,
   _Id,
+  total,
+  onClick,
 }) => {
   let [quantity, setQuantity] = useState(qty);
   return (
@@ -20,10 +22,13 @@ const CartProductSection: FC<IcartSection> = ({
         alt={`${name}`}
         aria-label={`${shortdesc}`}
       />
-      <div className={styles.test}>
+      <div className={styles.area_container}>
         <article className={styles.cart_product_block_contents}>
           <div className={style.produkt_title}>
             <p className={styles.cart_title}>{name}</p>
+          </div>
+          <div className={style.produkt_pris}>
+            <p className={styles.cart_title}>{price} KR</p>
           </div>
           <div className={style.produkt_antal}>
             <div className={styles.qty_area}>
@@ -43,10 +48,14 @@ const CartProductSection: FC<IcartSection> = ({
             </div>
           </div>
           <div className={style.produkt_price}>
-            <p className={styles.cart_title}>{price} KR</p>
+            <p className={styles.cart_title}>{`${total}`} KR</p>
           </div>
           <div className={style.produkt_bin}>
-            <button aria-label='Ta bort' className={styles.bin_icon}>
+            <button
+              aria-label='Ta bort'
+              onClick={() => price * qty}
+              className={styles.bin_icon}
+            >
               <img
                 src='https://d3studio.se/react/img/icons/bin.svg'
                 alt='Ta bort'

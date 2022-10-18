@@ -12,6 +12,15 @@
   border-bottom: 1px solid $mediumgrey;
   align-items: flex-end;
 }
+.footer_content {
+  display: flex;
+  flex: 0 0 auto;
+  font-weight: 700;
+  padding: 5px;
+  top: 0;
+  z-index: 1;
+  align-items: flex-end;
+}
 .header_content p {
   margin-bottom: 0px;
 }
@@ -22,13 +31,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.produkt_pris {
+  flex: 0 0 80px;
+  text-align: center;
+}
 .produkt_antal {
   flex: 0 0 50px;
   text-align: center;
 }
 .produkt_price {
   text-align: right;
-  width: 80px;
+  width: 60px;
 }
 .produkt_bin {
   width: 25px;

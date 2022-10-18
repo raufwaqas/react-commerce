@@ -69,6 +69,8 @@ interface IcartSection {
   shortdesc: string;
   qty: number;
   _Id: number;
+  onClick?: () => void;
+  total: Number;
 }
 interface BreadcrumbProps {
   title: String;
@@ -167,6 +169,6 @@ interface OrderFormProps {
   CardNumber: number;
   ValidUntil: number;
 }
-interface ICartTotalSection{
+interface ICartTotalSection {
   total: number;
 }
