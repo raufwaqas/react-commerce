@@ -77,8 +77,8 @@ const Blanket = () => {
                         id='zip'
                         name='Postnummer'
                         placeholder='100 01'
-                        required
-                        aria-required='true'
+                                        required
+                aria-required='true'
                       />
                     </div>
                   </div>

@@ -12,6 +12,16 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
   const [productsData, setProductData] = useState<any>([]);
+  const [total, setTotal] = useState(0);
+
+  const calcTotal = () => {
+    let total = 0;
+    for (let u = 0; u < productsData.length; u++) {
+      const item = productsData[u];
+      total += item.price * item.qty;
+    }
+    setTotal(total);
+  };
 
   // console.log(productsData);
   useEffect(() => {
@@ -38,7 +48,7 @@ const Cart = () => {
           });
       });
     })();
-  }, [cartData]);
+  }, [cartData.length]);
   return (
     <main>
       <Breadcrumb
@@ -68,7 +78,7 @@ const Cart = () => {
                   index: number
                 ) => {
                   const { _id, qty, name, price, img } = product;
-                  console.log('Cart product data', product);
+                  // console.log('Cart product data', product);
                   return (
                     <ol className={styles.cartParent} key={index}>
                       <CartProductSection
@@ -88,7 +98,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-        <CartTotalSection total={0} />
+        <CartTotalSection total={total} />
         <div className={styles.checkout_buttons}>
           <Link to='/produkt'>
             <Btn
