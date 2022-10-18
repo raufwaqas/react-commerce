@@ -72,6 +72,7 @@ interface IcartSection {
   onClick?: () => void;
   total: Number;
   id: Number;
+  handleCounter: any;
 }
 interface BreadcrumbProps {
   title: String;
@@ -171,5 +172,5 @@ interface OrderFormProps {
   ValidUntil: number;
 }
 interface ICartTotalSection {
-  total: number;
+  total: number | string | any;
 }

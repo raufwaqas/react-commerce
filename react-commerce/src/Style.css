@@ -564,7 +564,6 @@ nav [aria-current='page'] {
   z-index: 0;
   position: absolute;
   margin: -15px 0px 0px 20px;
-  display: none;
 }
 .header_main {
   display: flex;

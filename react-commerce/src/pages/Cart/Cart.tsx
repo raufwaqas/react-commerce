@@ -23,22 +23,44 @@ const Cart = () => {
     setTotal(total);
   };
 
-  // console.log(productsData);
   useEffect(() => {
+    calcTotal();
     (async () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
-          // console.log('data', res?.data);
+          console.log('data', res?.data);
           setCartData(res?.data);
         })
         .catch((err) => console.log(err));
     })();
   }, []);
+
+  const handleCounter = (id: string, quant: number): void => {
+    for (let i = 0; i < cartData.length; i++) {
+      if (cartData[i].productId === id) {
+        (async () => {
+          await axiosInstance
+            .put(`/carts/${cartData[i]._id}`, {
+              ...cartData[i],
+              quantity: quant,
+            })
+            .then((res) => {
+              console.log('res', res);
+              setCartData(cartData);
+            })
+            .catch((err) => console.log(err));
+        })();
+        calcTotal();
+        break;
+      }
+    }
+  };
+
   useEffect(() => {
     (async () => {
       if (cartData.length === 0) return;
-      // console.log('cartData', cartData);
+      console.log('cartData', cartData);
       cartData?.map(async (x: any) => {
         await axiosInstance
           .get(`/products/find/${x?.productId}`)
@@ -48,7 +70,10 @@ const Cart = () => {
           });
       });
     })();
-  }, [cartData.length]);
+  }, [cartData?.length]);
+
+  let tmpTotal = 0;
+
   return (
     <main>
       <Breadcrumb
@@ -79,6 +104,7 @@ const Cart = () => {
                 ) => {
                   const { _id, qty, name, price, img } = product;
                   // console.log('Cart product data', product);
+                  tmpTotal += price * qty;
                   return (
                     <ol className={styles.cartParent} key={index}>
                       <CartProductSection
@@ -88,7 +114,8 @@ const Cart = () => {
                         qty={qty}
                         price={price}
                         shortdesc={''}
-                        total={price * qty}
+                        total={price}
+                        handleCounter={handleCounter}
                         id={_id}
                       />
                     </ol>
@@ -98,7 +125,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-        <CartTotalSection total={total} />
+        <CartTotalSection total={`${tmpTotal} KR`} />
         <div className={styles.checkout_buttons}>
           <Link to='/produkt'>
             <Btn
