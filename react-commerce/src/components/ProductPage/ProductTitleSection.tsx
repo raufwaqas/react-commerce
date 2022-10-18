@@ -93,7 +93,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
         <div className='container-quantity'>
           <div className='container-qty'>
             <Btn
-              onClick={() => quantity !== 1 && setQuantity(quantity - 1)}
+              onClick={() => quantity !== 1 && setQuantity(prev=> prev - 1)}
               bgcolor='small-light-grey'
               text='<'
             />
@@ -105,7 +105,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
             />
 
             <Btn
-              onClick={() => setQuantity(quantity + 1)}
+              onClick={() => setQuantity(prev=> prev + 1)}
               bgcolor='small-dark-grey'
               text='>'
             />
