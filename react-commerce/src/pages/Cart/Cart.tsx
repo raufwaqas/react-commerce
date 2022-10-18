@@ -13,6 +13,7 @@ const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
   const [productsData, setProductData] = useState<any>([]);
   const [total, setTotal] = useState(0);
+  
 const calcTotal = () => {
    let total = 0;
    for (let u = 0; u < productsData.length; u++) {
