@@ -15,12 +15,7 @@ const Error = () => {
           Homepage.
         </p>
         <Link to='/' aria-label='Click here go back to Home page'>
-          <Btn
-            bgcolor='dark'
-            onClick={() => {}}
-            text='BACK TO HOME'
-            // role='button'
-          />
+          <Btn bgcolor='dark' onClick={() => {}} text='BACK TO HOME' />
         </Link>
       </div>
     </main>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import { NavItem } from '../../components/Data/DataHeader';
 import styles from './Kontakt.module.scss';
@@ -67,5 +67,3 @@ export const Kontakt = () => {
 };
 
 export default Kontakt;
-
-// .sendForm('gmail', 'template_9dztrjb', form.current, 'Sw_WWFF99XrJOxYmo')
