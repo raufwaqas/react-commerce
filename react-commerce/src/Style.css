@@ -1,8 +1,5 @@
-/* --typeface-- */
-/* @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mrs+Saint+Delafield&family=Tenor+Sans&display=swap');
 
-/* --default color-- */
 * {
   padding: 0;
   margin: 0;
@@ -28,8 +25,7 @@ html * {
   --black: #000000;
   --ljusgrey: #f7f7f7;
 }
-/* --font size and properties--*/
-/* FONT FAMILY */
+
 h1,
 h2,
 h4,
@@ -51,9 +47,7 @@ body,
 .small-text {
   font-family: 'Lato', sans-serif;
 }
-/* FONT FAMILY END */
 
-/* FONT SIZE */
 body {
   font-size: 1rem;
 }
@@ -124,10 +118,6 @@ select {
   line-height: 27px;
 }
 
-/* FONT SIZE END */
-
-/* --color style-- */
-/* BACKGROUND COLORS */
 .group1 {
   background-color: var(--skyblue);
 }
@@ -161,9 +151,7 @@ select {
 .top-header {
   color: var(--white);
 }
-/* BACKGROUND COLORS END */
 
-/* TEXT COLOR */
 a,
 .nav__menu,
 .pcard-title {
@@ -209,9 +197,6 @@ h6 .lightbutton,
   background: var(--lightgrey);
   color: var(--black);
 }
-
-/* -- contents painting -- */
-/* Product styling */
 
 .product-Img-Area {
   display: flex;
@@ -261,7 +246,6 @@ h6 .lightbutton,
   text-align: center;
 }
 
-/* =======Flex objects==== */
 .order-total-section,
 .order-total-area,
 .order-total-pris,
@@ -281,7 +265,7 @@ h6 .lightbutton,
 .top-header {
   display: flex;
 }
-/* =Flex= */
+
 .container-mian,
 .container-title-img,
 .container-sub,
@@ -297,10 +281,7 @@ h6 .lightbutton,
 .top-header {
   justify-content: center;
 }
-/* =======Flex objects ends==== */
 
-/* Product styling end */
-/* header styling */
 .nav .button {
   text-transform: uppercase;
 }
@@ -340,16 +321,13 @@ select {
 
 hr.solid {
   border-top: 0.5px solid var(--darkgrey);
-  /* margin: 0 10px 0 10px; */
 }
 hr.solid2 {
   border-top: 2.5px solid;
   border-color: var(--black);
-  /* margin: 0 10px 0 10px; */
 }
 hr.solid3 {
   border-color: var(--black);
-  /* margin: 0 10px 0 10px; */
 }
 .order-total {
   width: 500px;
@@ -486,7 +464,6 @@ hr.solid3 {
   height: 40px;
 }
 
-/* ========header Styling======= */
 .header {
   display: flex;
   flex-direction: row;
