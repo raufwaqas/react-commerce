@@ -1,15 +1,13 @@
-const Order = require("../models/Order");
+const Order = require('../models/Order');
 const {
   verifyToken,
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
-} = require("./verifyToken");
+} = require('./verifyToken');
 
-const router = require("express").Router();
+const router = require('express').Router();
 
-//CREATE
-
-router.post("/", verifyToken, async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   const newOrder = new Order(req.body);
 
   try {
@@ -20,8 +18,7 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
-//UPDATE
-router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
+router.put('/:id', verifyTokenAndAdmin, async (req, res) => {
   try {
     const updatedOrder = await Order.findByIdAndUpdate(
       req.params.id,
@@ -36,18 +33,16 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//DELETE
-router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
+router.delete('/:id', verifyTokenAndAdmin, async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
-    res.status(200).json("Order has been deleted...");
+    res.status(200).json('Order has been deleted...');
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-//GET USER ORDERS
-router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
+router.get('/find/:userId', verifyTokenAndAuthorization, async (req, res) => {
   try {
     const orders = await Order.find({ userId: req.params.userId });
     res.status(200).json(orders);
@@ -56,9 +51,7 @@ router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
   }
 });
 
-// //GET ALL
-
-router.get("/", verifyTokenAndAdmin, async (req, res) => {
+router.get('/', verifyTokenAndAdmin, async (req, res) => {
   try {
     const orders = await Order.find();
     res.status(200).json(orders);
@@ -67,9 +60,7 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-// GET MONTHLY INCOME
-
-router.get("/income", verifyTokenAndAdmin, async (req, res) => {
+router.get('/income', verifyTokenAndAdmin, async (req, res) => {
   const productId = req.query.pid;
   const date = new Date();
   const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
@@ -87,14 +78,14 @@ router.get("/income", verifyTokenAndAdmin, async (req, res) => {
       },
       {
         $project: {
-          month: { $month: "$createdAt" },
-          sales: "$amount",
+          month: { $month: '$createdAt' },
+          sales: '$amount',
         },
       },
       {
         $group: {
-          _id: "$month",
-          total: { $sum: "$sales" },
+          _id: '$month',
+          total: { $sum: '$sales' },
         },
       },
     ]);
