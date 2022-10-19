@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './Footer.module.scss';
 import { brand, payment, social } from '../Data/DataFooter';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <footer
       className={styles.footer_section_main}

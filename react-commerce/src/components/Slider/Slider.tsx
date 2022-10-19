@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { Carousel } from '../Data/SliderDB';
 import Btn from '../Buttons/Btn';
 
-const Slider: React.FC = () => {
+const Slider:FC = () => {
   return (
     <div
       id='carouselExampleCaptions'

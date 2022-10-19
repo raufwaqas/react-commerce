@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import { payment } from '../Data/DataFooter';
 import styles from '../Footer/Footer.module.scss';
 import style from './Blanket.module.scss';
 import { axiosInstance } from '../../axios/axiosHttps';
 
-const Blanket = () => {
+const Blanket: FC = () => {
   const [address, setAddress] = useState('');
   const [postcode, setPostcode] = useState('');
   const [city, setCity] = useState('');
@@ -59,29 +59,29 @@ const Blanket = () => {
                 <div className={style.col_50}>
                   <h3>Leveransuppgifter</h3>
                   <label htmlFor='fname'>
-                    <i className='fa fa-user'></i> Fullständiga namn
+                    <i></i> Fullständiga namn
                   </label>
                   <input
                     type='text'
                     id='fname'
-                    name='Namn'
-                    onChange={(e: any) => setName(e.target.value)}
+                    name='name'
                     placeholder='John M. Doe'
                     value={name}
+                    onChange={(e: any) => setName(e.target.value)}
                   />
                   <label htmlFor='email'>
-                    <i className='fa fa-envelope'></i> E-post
+                    <i></i> E-post
                   </label>
                   <input
                     type='text'
                     id='email'
                     name='email'
-                    onChange={(e: any) => setEmail(e.target.value)}
                     placeholder='john@example.com'
                     value={email}
+                    onChange={(e: any) => setEmail(e.target.value)}
                   />
                   <label htmlFor='adr'>
-                    <i className='fa fa-address-card-o'></i> Adress
+                    <i></i> Adress
                   </label>
                   <input
                     type='text'
@@ -92,7 +92,7 @@ const Blanket = () => {
                     onChange={(e: any) => setAddress(e.target.value)}
                   />
                   <label htmlFor='city'>
-                    <i className='fa fa-institution'></i> Postort
+                    <i></i> Postort
                   </label>
                   <input
                     type='text'
@@ -121,7 +121,7 @@ const Blanket = () => {
                         type='text'
                         id='zip'
                         name='Postnummer'
-                        placeholder='100 01'
+                        placeholder='10001'
                         value={postcode}
                         onChange={(e: any) => setPostcode(e.target.value)}
                       />

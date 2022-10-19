@@ -12,7 +12,6 @@ const Nav: FC = () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
-          // console.log('data', res?.data.length);
           setCardItem(res?.data.length);
         })
         .catch((err) => console.log(err));
