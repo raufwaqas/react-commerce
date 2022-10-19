@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { store } from '../store/index';
 
+const host =
+  process.env.NODE_ENV === 'production'
+    ? 'https://e-commerce-api-6gdy.onrender.com'
+    : 'http://localhost:4000';
+
 export let axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL: `${host}/api`,
   params: {},
   headers: {},
 });
