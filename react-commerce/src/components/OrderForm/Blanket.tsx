@@ -1,9 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { payment } from '../Data/DataFooter';
 import styles from '../Footer/Footer.module.scss';
 import style from './Blanket.module.scss';
+import { axiosInstance } from '../../axios/axiosHttps';
 
 const Blanket = () => {
+  const [address, setAddress] = useState('');
+  const [postcode, setPostcode] = useState('');
+  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    const cart = (await axiosInstance.get(`/carts`)).data;
+    const userId = cart[0].userId;
+
+    let amount = 0;
+    for (let item of cart) {
+      const res = await axiosInstance.get(`/products/find/${item?.productId}`);
+      amount += res.data.price;
+    }
+
+    const products = cart.map((item: any) => {
+      return { productId: item.productId, quantity: item.quantity };
+    });
+    const orderAddress = {
+      address,
+      postcode,
+      city,
+      region,
+    };
+
+    const order = {
+      userId,
+      products,
+      name,
+      email,
+      amount,
+      address: orderAddress,
+    };
+
+    axiosInstance
+      .post(`/orders`, order)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <div className={style.row}>
@@ -20,7 +65,9 @@ const Blanket = () => {
                     type='text'
                     id='fname'
                     name='Namn'
+                    onChange={(e: any) => setName(e.target.value)}
                     placeholder='John M. Doe'
+                    value={name}
                   />
                   <label htmlFor='email'>
                     <i className='fa fa-envelope'></i> E-post
@@ -29,7 +76,9 @@ const Blanket = () => {
                     type='text'
                     id='email'
                     name='email'
+                    onChange={(e: any) => setEmail(e.target.value)}
                     placeholder='john@example.com'
+                    value={email}
                   />
                   <label htmlFor='adr'>
                     <i className='fa fa-address-card-o'></i> Adress
@@ -39,6 +88,8 @@ const Blanket = () => {
                     id='adr'
                     name='adress'
                     placeholder='Adress'
+                    value={address}
+                    onChange={(e: any) => setAddress(e.target.value)}
                   />
                   <label htmlFor='city'>
                     <i className='fa fa-institution'></i> Postort
@@ -48,6 +99,8 @@ const Blanket = () => {
                     id='city'
                     name='city'
                     placeholder='Stockholm'
+                    value={city}
+                    onChange={(e: any) => setCity(e.target.value)}
                   />
 
                   <div className={style.row}>
@@ -58,6 +111,8 @@ const Blanket = () => {
                         id='state'
                         name='state'
                         placeholder='Stockholm'
+                        value={region}
+                        onChange={(e: any) => setRegion(e.target.value)}
                       />
                     </div>
                     <div className={style.col_50}>
@@ -67,6 +122,8 @@ const Blanket = () => {
                         id='zip'
                         name='Postnummer'
                         placeholder='100 01'
+                        value={postcode}
+                        onChange={(e: any) => setPostcode(e.target.value)}
                       />
                     </div>
                   </div>
@@ -151,6 +208,7 @@ const Blanket = () => {
                 </div>
                 <input
                   type='submit'
+                  onClick={onSubmit}
                   value='Slutför köp'
                   className={style.btn}
                 />

@@ -4,7 +4,6 @@ import styles from './Nav.module.scss';
 import { Link } from 'react-router-dom';
 import { axiosInstance } from '../../axios/axiosHttps';
 
-
 const Nav: FC = () => {
   const [cardItem, setCardItem] = useState(0);
 
@@ -13,7 +12,7 @@ const Nav: FC = () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
-          console.log('data', res?.data.length);
+          // console.log('data', res?.data.length);
           setCardItem(res?.data.length);
         })
         .catch((err) => console.log(err));
@@ -80,7 +79,9 @@ const Nav: FC = () => {
             <li className='bi-basket2' aria-hidden='true'></li>
           </Link>
 
-          <li className='shopping-icon' aria-hidden='true'>{cardItem}</li>
+          <li className='shopping-icon' aria-hidden='true'>
+            {cardItem}
+          </li>
         </div>
       </nav>
     </header>

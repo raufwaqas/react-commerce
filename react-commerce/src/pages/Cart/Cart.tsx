@@ -13,23 +13,22 @@ const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
   const [productsData, setProductData] = useState<any>([]);
   const [total, setTotal] = useState(0);
+  const [updateCart, setUpdateCart] = useState(false);
 
-  const calcTotal = () => {
+  const calcTotal = (data: any) => {
     let total = 0;
-    for (let u = 0; u < productsData.length; u++) {
-      const item = productsData[u];
+    for (let u = 0; u < data.length; u++) {
+      const item = data[u];
       total += item.price * item.qty;
     }
-    setTotal(total);
+    setTotal((prev: any) => total);
   };
 
   useEffect(() => {
-    calcTotal();
     (async () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
-          console.log('data', res?.data);
           setCartData(res?.data);
         })
         .catch((err) => console.log(err));
@@ -39,40 +38,49 @@ const Cart = () => {
   const handleCounter = (id: string, quant: number): void => {
     for (let i = 0; i < cartData.length; i++) {
       if (cartData[i].productId === id) {
-        (async () => {
-          await axiosInstance
-            .put(`/carts/${cartData[i]._id}`, {
-              ...cartData[i],
-              quantity: quant,
-            })
-            .then((res) => {
-              console.log('res', res);
-              setCartData(cartData);
-            })
-            .catch((err) => console.log(err));
-        })();
-        calcTotal();
+        axiosInstance
+          .put(`/carts/${cartData[i]._id}`, { ...cartData[i], quantity: quant })
+          .then((res) => {
+            const newCart = cartData;
+            newCart[i] = res.data;
+            setCartData(newCart);
+            setUpdateCart((prev: any) => !prev);
+          })
+          .catch((err) => console.log(err));
         break;
       }
     }
   };
 
+  const onDelete = () => {
+    (async () => {
+      await axiosInstance
+        .get(`/carts`)
+        .then((res) => {
+          setCartData(res?.data);
+        })
+        .catch((err) => console.log(err));
+    })();
+  };
+
   useEffect(() => {
     (async () => {
       if (cartData.length === 0) return;
-      console.log('cartData', cartData);
-      cartData?.map(async (x: any) => {
-        await axiosInstance
-          .get(`/products/find/${x?.productId}`)
-          .then((res) => {
-            res.data.qty = x.quantity;
-            setProductData((prev: any) => [...prev, res?.data]);
-          });
-      });
-    })();
-  }, [cartData?.length]);
+      let arr: any = [];
+      for (var item of cartData) {
+        const res = await axiosInstance.get(
+          `/products/find/${item?.productId}`
+        );
 
-  let tmpTotal = 0;
+        res.data.qty = item.quantity;
+        arr.push(res.data);
+      }
+
+      console.log(arr);
+      setProductData(arr);
+      calcTotal(arr);
+    })();
+  }, [cartData, updateCart]);
 
   return (
     <main>
@@ -104,7 +112,7 @@ const Cart = () => {
                 ) => {
                   const { _id, qty, name, price, img } = product;
                   // console.log('Cart product data', product);
-                  tmpTotal += price * qty;
+
                   return (
                     <ol className={styles.cartParent} key={index}>
                       <CartProductSection
@@ -115,8 +123,10 @@ const Cart = () => {
                         price={price}
                         shortdesc={''}
                         total={price}
-                        handleCounter={handleCounter}
-                        id={_id}
+                        onDelete={onDelete}
+                        handleCounter={(id: string, quant: number) => {
+                          handleCounter(id, quant);
+                        }}
                       />
                     </ol>
                   );
@@ -125,7 +135,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-        <CartTotalSection total={`${tmpTotal} KR`} />
+        <CartTotalSection total={total} />
         <div className={styles.checkout_buttons}>
           <Link to='/produkt'>
             <Btn

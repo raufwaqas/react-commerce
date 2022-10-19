@@ -70,9 +70,9 @@ interface IcartSection {
   qty: number;
   _Id: number;
   onClick?: () => void;
-  total: Number;
-  id: Number;
   handleCounter: any;
+  onDelete: any;
+  total: Number;
 }
 interface BreadcrumbProps {
   title: String;
@@ -172,5 +172,5 @@ interface OrderFormProps {
   ValidUntil: number;
 }
 interface ICartTotalSection {
-  total: number | string | any;
+  total: number | string;
 }
