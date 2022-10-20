@@ -3,7 +3,7 @@ import { ICarousel } from '../../../../types';
 export let Carousel: ICarousel[] = [
   {
     artnr: 101492,
-    img: 'https://d3studio.se/react/img/slider/model02.png',
+    img: 'https://d3studio.se/react/img/slider/model02.webp',
     name: 'Sensitive Balance Face Fluid',
     produktbild: 'https://d3studio.se/react/img/600px/101492.png',
     shortdesc: 'Lätt, mild och lugnande ansiktskräm',
