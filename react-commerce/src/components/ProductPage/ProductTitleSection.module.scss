@@ -1,0 +1,6 @@
+.button:focus{
+    border: solid 4px var(--focus) !important;
+  }
+  .button:focus-visible{
+    border: solid 4px var(--focus) !important;
+  }

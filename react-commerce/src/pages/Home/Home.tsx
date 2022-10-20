@@ -24,7 +24,7 @@ const Home = () => {
     <>
       <main>
         <Slider />
-        <div
+        <article
           className={`${styles.om_oss_block_om} ${styles.top_margin}`}
           aria-label='Vällkommen till'
         >
@@ -37,7 +37,7 @@ const Home = () => {
           <label className={styles.om_oss_kortbeskrv}>
             <p aria-label='Ett liv i hälsa'>Ett liv i hälsa</p>
           </label>
-        </div>
+        </article>
         <article className={styles.product_container}>
           <div></div>
           <section className='container__inner'>

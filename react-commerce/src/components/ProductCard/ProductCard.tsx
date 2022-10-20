@@ -52,12 +52,13 @@ const ProductCard: FC<IProductCard> = ({
           <span className={styles.price}>
             <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
           </span>
-          <span className={styles.buy_button}>
+          <span className={styles.buy_button} >
             <span className={styles.buy_button_display}>
               <Btn
                 bgcolor='product_card_btn'
                 onClick={() => setQuantity(quantity + 1)}
                 text='Läs mer'
+                className={styles.buy_button_focus}
               />
             </span>
           </span>

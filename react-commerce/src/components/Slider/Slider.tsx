@@ -4,7 +4,7 @@ import Btn from '../Buttons/Btn';
 
 const Slider:FC = () => {
   return (
-    <div
+    <section
       id='carouselExampleCaptions'
       className='carousel slide'
       data-bs-ride='false'
@@ -34,7 +34,7 @@ const Slider:FC = () => {
           />
           <div className='carousel-caption d-md-block'>
             <h2>{Carousel[0].name}</h2>
-            <h5>{Carousel[0].shortdesc}</h5>
+            <p className='slider-short-Desc'>{Carousel[0].shortdesc}</p>
             <img
               src={Carousel[0].produktbild}
               className='pbild'
@@ -52,7 +52,7 @@ const Slider:FC = () => {
           />
           <div className='carousel-caption d-none d-md-block'>
             <h2>{Carousel[1].name}</h2>
-            <h5>{Carousel[1].shortdesc}</h5>
+            <p>{Carousel[1].shortdesc}</p>
             <img
               src={Carousel[1].produktbild}
               className='pbild'
@@ -81,7 +81,7 @@ const Slider:FC = () => {
         <span className='carousel-control-next-icon' aria-hidden='true'></span>
         <span className='visually-hidden'>Next</span>
       </button>
-    </div>
+    </section>
   );
 };
 

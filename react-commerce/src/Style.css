@@ -16,7 +16,7 @@ html * {
   --lightgrey: #e3e3e3;
   --babypink: #f9f0f1;
   --mediumpink: #fcedea;
-  --darkpink: #d05278;
+  --darkpink: #CC426A;
   --lightyellow: #fdefc5;
   --skyblue: #ddeff6;
   --turkuaz: #e0f5f5;
@@ -24,6 +24,7 @@ html * {
   --darkgrey: #222222;
   --black: #000000;
   --ljusgrey: #f7f7f7;
+  --focus: #FF4858
 }
 
 h1,
@@ -152,6 +153,12 @@ select {
   color: var(--white);
 }
 
+button:focus{
+  border: solid 4px var(--focus) ;
+}
+button:focus-visible{
+  border: solid 4px var(--focus);
+}
 a,
 .nav__menu,
 .pcard-title {
@@ -169,7 +176,7 @@ h3,
 h4,
 h5,
 h6 .lightbutton,
-.search {
+.search, .slider-short-Desc {
   color: var(--deepred);
 }
 .ean {
@@ -520,7 +527,7 @@ li {
 nav a:hover,
 nav a:focus {
   color: var(--black);
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 nav [aria-current='page'] {
   color: #000;
@@ -540,7 +547,7 @@ nav [aria-current='page'] {
   border-radius: 100px;
   z-index: 0;
   position: absolute;
-  margin: -15px 0px 0px 20px;
+  margin: -15px 0px 0px 15px;
 }
 .header_main {
   display: flex;
@@ -554,6 +561,7 @@ nav [aria-current='page'] {
   text-align: left !important;
   left: 20% !important;
   bottom: 150px !important;
+  color: var(--black) !important;
 }
 .d-block {
   padding: 0px 17% 0px 0px;

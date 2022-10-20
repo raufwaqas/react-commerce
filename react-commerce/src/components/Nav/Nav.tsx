@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { FC, useState, useEffect } from 'react';
 import { NavItem, Logo } from '../Data/DataHeader';
 import styles from './Nav.module.scss';
@@ -19,8 +20,8 @@ const Nav: FC = () => {
   }, []);
 
   return (
-    <header className={styles.header} role='tree' aria-details='Navigation'>
-      <nav className={styles.navbar} aria-controls='menu'>
+    <header className={styles.header} >
+      <nav className={styles.navbar} >
         <a href={NavItem[0].path} className={styles.brand}>
           <img
             src={Logo[0].url}
@@ -31,10 +32,11 @@ const Nav: FC = () => {
           />
         </a>
         <input
-          type='checkbox'
+          type="hidden"
           id={styles.nav}
           className={styles.hidden}
-          aria-hidden='true'
+          
+          
         />
         <label htmlFor='nav' className={styles.nav_toggle} aria-hidden='true'>
           <span></span>
@@ -47,40 +49,44 @@ const Nav: FC = () => {
           role='navigation'
         >
           <ol className={styles.menu} aria-label='navigation bar'>
-            <ul className={styles.menu_item} aria-label={NavItem[0].name}>
-              <a href={NavItem[0].path} aria-hidden='true'>
+            <li className={styles.menu_item} aria-label={NavItem[0].name}>
+              <a href={NavItem[0].path} role="link">
                 {NavItem[0].name}
               </a>
-            </ul>
-            <ul className={styles.menu_item} aria-label={NavItem[1].name}>
-              <a href={NavItem[1].path} aria-hidden='true'>
+            </li>
+            <li className={styles.menu_item} aria-label={NavItem[1].name}>
+              <a href={NavItem[1].path} role="link">
                 {NavItem[1].name}
               </a>
-            </ul>
-            <ul className={styles.menu_item} aria-label={NavItem[2].name}>
-              <a href={NavItem[2].path} aria-hidden='true'>
+            </li>
+            <li className={styles.menu_item} aria-label={NavItem[2].name}>
+              <a href={NavItem[2].path} role="link">
                 {NavItem[2].name}
               </a>
-            </ul>
-            <ul className={styles.menu_item} aria-label={NavItem[3].name}>
-              <a href={NavItem[3].path} aria-hidden='true'>
+            </li>
+            <li className={styles.menu_item} aria-label={NavItem[3].name}>
+              <a href={NavItem[3].path} role="link">
                 {NavItem[3].name}
               </a>
-            </ul>
+            </li>
           </ol>
         </div>
         <div
           className='header__cartblock'
-          aria-label='Varkorg'
-          aria-details='Varkorg'
+          // role='navigation'
+          // aria-label='Varkorg'
+          // aria-details='Varkorg'
         >
-          <Link to='/cart' aria-hidden='true'>
-            <li className='bi-basket2' aria-hidden='true'></li>
+          <Link to='/cart' aria-label="Click here to visit cart page">
+            
+            <span className='bi-basket2' ></span>
+            
           </Link>
 
-          <li className='shopping-icon' aria-hidden='true'>
+          <span className='shopping-icon' aria-label='Cart quantity'>
             {cardItem}
-          </li>
+          </span>
+         
         </div>
       </nav>
     </header>

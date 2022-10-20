@@ -5,6 +5,7 @@ import { socialmedia } from '../Data/social';
 import { useState } from 'react';
 import { IProductTitleSectionProps } from '../../../../types';
 
+
 const ProductTitleSection: FC<IProductTitleSectionProps> = ({
   name,
   artnr,
@@ -122,7 +123,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               text='Ta bort'
             />
           ) : (
-            <Btn
+            <Btn 
               bgcolor='dark'
               leftIcon='bi-basket'
               onClick={() => {

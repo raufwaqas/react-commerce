@@ -7,7 +7,7 @@ const Footer: FC = () => {
     <footer
       className={styles.footer_section_main}
       aria-label='Company Information'
-      role='cell'
+      role='navigation'
     >
       <div className={styles.footer_section_inner}>
         <div className={styles.foter_section_2} aria-label='Company Logo'>

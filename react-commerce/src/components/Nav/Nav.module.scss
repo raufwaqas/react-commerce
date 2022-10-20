@@ -25,6 +25,7 @@
     width: 100%;
     padding: 1rem 4rem;
     margin: 0 auto;
+    
 
     .brand {
       font-family: inherit;
@@ -42,6 +43,7 @@
       flex-basis: auto;
       justify-content: center;
       align-items: center;
+      gap: 25px;
 
       &_item {
         &:not(:first-child) {

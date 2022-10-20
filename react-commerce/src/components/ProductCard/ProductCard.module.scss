@@ -36,7 +36,7 @@
 
 .product__Img__Area {
   @include flexbox(row, center, null, null, null);
-  // height: 460px;
+  
 }
 
 .labelTag {
@@ -78,6 +78,9 @@
 .price {
   display: inline-block;
 }
-.buy_button {
-  z-index: 999;
+button:focus{
+  border: solid 4px $black !important;
+}
+button:focus-visible{
+  border: solid 4px $black !important;
 }
