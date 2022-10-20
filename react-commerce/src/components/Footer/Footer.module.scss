@@ -35,7 +35,7 @@
   border-top: 1px solid white;
 }
 .foter_section_icons {
-  @include flexbox(row, null, null, 10px, null);
+  @include flexbox(row, null, null, 10px, wrap);
 }
 .foter_section_copyright {
   font-size: 0.7rem;

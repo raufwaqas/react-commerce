@@ -655,3 +655,9 @@ ol {
 p {
   margin-bottom: 0rem !important;
 }
+@media (max-width: 768px) {
+  .Product-page-image {
+    display: flex;
+    width: 345px;
+    padding: 20px;}
+}

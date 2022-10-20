@@ -36,14 +36,20 @@
   text-align: center;
 }
 .produkt_antal {
+  font-weight: 800 !important;
   flex: 0 0 50px;
   text-align: center;
 }
 .produkt_price {
+  font-weight: 800 !important;
   text-align: right;
   width: 60px;
 }
 .produkt_bin {
   width: 25px;
   text-align: right;
+}
+.produkt_total_price{
+font-weight: 800 !important;
+
 }

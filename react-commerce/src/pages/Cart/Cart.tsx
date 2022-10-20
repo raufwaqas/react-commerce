@@ -135,7 +135,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-        <CartTotalSection total={total} />
+        <CartTotalSection total={`${total}KR`} />
         <div className={styles.checkout_buttons}>
           <Link to='/produkt'>
             <Btn
