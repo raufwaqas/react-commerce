@@ -5,7 +5,7 @@ https://api-tau-sepia.vercel.app/
 
 ```
 
-![](https://d3studio.se/react/prototype.png)
+![](https://d3studio.se/react/prototype.webp)
 
 # setup
 

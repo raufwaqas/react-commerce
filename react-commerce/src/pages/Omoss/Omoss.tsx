@@ -141,7 +141,7 @@ const Omoss = () => {
             </div>
             <div className={styles.om_oss_block_produkt_right}>
               <img
-                src='https://d3studio.se/react/img/slider/bild2.png'
+                src='https://d3studio.se/react/img/slider/bild2.webp'
                 alt=''
                 className={styles.om_oss_block_bild}
               />

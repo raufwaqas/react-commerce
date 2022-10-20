@@ -4,7 +4,7 @@ export let Data: DataType[] = [
   {
     id: 1,
     artnr: 101472,
-    img: 'https://d3studio.se/react/img/400px/101472.png',
+    img: 'https://d3studio.se/react/img/400px/101472.webp',
     name: 'Refreshing Cleansing Lotion NP',
     price: 200,
     ean: 7319861014723,
@@ -23,7 +23,7 @@ export let Data: DataType[] = [
   {
     id: 2,
     artnr: 101473,
-    img: 'https://d3studio.se/react/img/400px/101473.png',
+    img: 'https://d3studio.se/react/img/400px/101473.webp',
     name: '3 in 1 Cleansing Milk P',
     price: 120,
     ean: 7319861014723,
@@ -43,7 +43,7 @@ export let Data: DataType[] = [
   {
     id: 3,
     artnr: 101474,
-    img: 'https://d3studio.se/react/img/400px/101473.png',
+    img: 'https://d3studio.se/react/img/400px/101473.webp',
     name: '3+3 Day Cream NPP',
     price: 130,
     ean: 7319861014860,
@@ -64,7 +64,7 @@ export let Data: DataType[] = [
   {
     id: 4,
     artnr: 101475,
-    img: 'https://d3studio.se/react/img/400px/101475.png',
+    img: 'https://d3studio.se/react/img/400px/101475.webp',
     name: 'Anti Age 25+ Protect & Restore Day Cream Dry Skin P',
     price: 80,
     ean: 7319861014914,
@@ -85,7 +85,7 @@ export let Data: DataType[] = [
   {
     id: 5,
     artnr: 101476,
-    img: 'https://d3studio.se/react/img/400px/101476.png',
+    img: 'https://d3studio.se/react/img/400px/101476.webp',
     name: 'Anti Age 25+ Protect & Restore Day Cream Normal Skin P',
     price: 60,
     ean: 7319861014792,
@@ -106,7 +106,7 @@ export let Data: DataType[] = [
   {
     id: 6,
     artnr: 101476,
-    img: 'https://d3studio.se/react/img/400px/101512.png',
+    img: 'https://d3studio.se/react/img/400px/101512.webp',
     name: 'Anti Age 25+ Protect & Restore Eye Cream P',
     price: 35,
     ean: 7319861015126,
@@ -126,7 +126,7 @@ export let Data: DataType[] = [
   {
     id: 7,
     artnr: 101492,
-    img: 'https://d3studio.se/react/img/400px/101492.png',
+    img: 'https://d3studio.se/react/img/400px/101492.webp',
     name: 'Anti Age 25+ Protect & Restore Night Cream Dry Skin P',
     price: 45,
     ean: 7319861014921,
@@ -146,7 +146,7 @@ export let Data: DataType[] = [
   {
     id: 8,
     artnr: 101480,
-    img: 'https://d3studio.se/react/img/400px/101480.png',
+    img: 'https://d3studio.se/react/img/400px/101480.webp',
     name: 'Anti Age 25+ Protect & Restore Night Cream Normal Skin P',
     price: 80,
     ean: 7319861014808,
@@ -166,7 +166,7 @@ export let Data: DataType[] = [
   {
     id: 9,
     artnr: 101513,
-    img: 'https://d3studio.se/react/img/400px/101513.png',
+    img: 'https://d3studio.se/react/img/400px/101513.webp',
     name: 'Anti Age 25+ Restore & Protect Q10 Serum P',
     price: 90,
     ean: 7319861015133,
@@ -186,7 +186,7 @@ export let Data: DataType[] = [
   {
     id: 10,
     artnr: 101494,
-    img: 'https://d3studio.se/react/img/400px/101494.png',
+    img: 'https://d3studio.se/react/img/400px/101494.webp',
     name: 'Anti Age Filling Night Cream Dry Skin',
     price: 65,
     ean: 7319861014945,
@@ -206,7 +206,7 @@ export let Data: DataType[] = [
   {
     id: 11,
     artnr: 101482,
-    img: 'https://d3studio.se/react/img/400px/101482.png',
+    img: 'https://d3studio.se/react/img/400px/101482.webp',
     name: 'Anti Age Filling Night Cream Normal Skin',
     price: 78,
     ean: 7319861014822,
@@ -226,7 +226,7 @@ export let Data: DataType[] = [
   {
     id: 12,
     artnr: 101515,
-    img: 'https://d3studio.se/react/img/400px/101515.png',
+    img: 'https://d3studio.se/react/img/400px/101515.webp',
     name: 'Anti Age Lift & Fill Face Serum',
     price: 89,
     ean: 7319861015157,
@@ -246,7 +246,7 @@ export let Data: DataType[] = [
   {
     id: 13,
     artnr: 101514,
-    img: 'https://d3studio.se/react/img/400px/101514.png',
+    img: 'https://d3studio.se/react/img/400px/101514.webp',
     name: 'Anti Age Lift & Fill Firming Eye Cream',
     price: 49,
     ean: 7319861015140,
@@ -266,7 +266,7 @@ export let Data: DataType[] = [
   {
     id: 14,
     artnr: 101493,
-    img: 'https://d3studio.se/react/img/400px/101493.png',
+    img: 'https://d3studio.se/react/img/400px/101493.webp',
     name: 'Anti Age Lifting Day Cream Dry Skin',
     price: 55,
     ean: 7319861014938,
@@ -286,7 +286,7 @@ export let Data: DataType[] = [
   {
     id: 15,
     artnr: 101481,
-    img: 'https://d3studio.se/react/img/400px/101481.png',
+    img: 'https://d3studio.se/react/img/400px/101481.webp',
     name: 'Anti Age Lifting Day Cream Normal Skin',
     price: 78,
     ean: 7319861014815,
@@ -305,7 +305,7 @@ export let Data: DataType[] = [
   {
     id: 16,
     artnr: 101566,
-    img: 'https://d3studio.se/react/img/400px/101566.png',
+    img: 'https://d3studio.se/react/img/400px/101566.webp',
     name: 'Anti Age Revitalising Night Cream P',
     price: 98,
     ean: 7319861015669,
@@ -325,7 +325,7 @@ export let Data: DataType[] = [
   {
     id: 17,
     artnr: 101568,
-    img: 'https://d3studio.se/react/img/400px/101568.png',
+    img: 'https://d3studio.se/react/img/400px/101568.webp',
     name: 'Anti Age Rich Moisture Face Cream P',
     price: 200,
     ean: 7319861015683,
@@ -345,7 +345,7 @@ export let Data: DataType[] = [
   {
     id: 18,
     artnr: 101567,
-    img: 'https://d3studio.se/react/img/400px/101567.png',
+    img: 'https://d3studio.se/react/img/400px/101567.webp',
     name: 'Anti Age Smoothing Eye Cream NP',
     price: 15,
     ean: 7319861015676,
@@ -365,7 +365,7 @@ export let Data: DataType[] = [
   {
     id: 19,
     artnr: 101565,
-    img: 'https://d3studio.se/react/img/400px/101565.png',
+    img: 'https://d3studio.se/react/img/400px/101565.webp',
     name: 'Anti Age Vitalising Day Cream P',
     price: 39,
     ean: 7319861015652,
@@ -384,7 +384,7 @@ export let Data: DataType[] = [
   {
     id: 20,
     artnr: 101504,
-    img: 'https://d3studio.se/react/img/400px/101504.png',
+    img: 'https://d3studio.se/react/img/400px/101504.webp',
     name: 'Bronze Gel NP',
     price: 120,
     ean: 7319861015041,
@@ -403,7 +403,7 @@ export let Data: DataType[] = [
   {
     id: 21,
     artnr: 5000012654,
-    img: 'https://d3studio.se/react/img/400px/5000012654.png',
+    img: 'https://d3studio.se/react/img/400px/5000012654.webp',
     name: 'Calming Eye Gel',
     price: 110,
     ean: 7319861015089,
@@ -423,7 +423,7 @@ export let Data: DataType[] = [
   {
     id: 22,
     artnr: 101485,
-    img: 'https://d3studio.se/react/img/400px/101485.png',
+    img: 'https://d3studio.se/react/img/400px/101485.webp',
     name: 'Caring Face Cream N',
     price: 160,
     ean: 7319861014853,
@@ -443,7 +443,7 @@ export let Data: DataType[] = [
   {
     id: 23,
     artnr: 101502,
-    img: 'https://d3studio.se/react/img/400px/101502.png',
+    img: 'https://d3studio.se/react/img/400px/101502.webp',
     name: 'Cleansing Scrub NP',
     price: 65,
     ean: 7319861015027,
@@ -463,7 +463,7 @@ export let Data: DataType[] = [
   {
     id: 24,
     artnr: 101507,
-    img: 'https://d3studio.se/react/img/400px/101507.png',
+    img: 'https://d3studio.se/react/img/400px/101507.webp',
     name: 'Eye Make Up Remover NP',
     price: 55,
     ean: 7319861015072,
@@ -483,7 +483,7 @@ export let Data: DataType[] = [
   {
     id: 25,
     artnr: 101496,
-    img: 'https://d3studio.se/react/img/400px/101496.png',
+    img: 'https://d3studio.se/react/img/400px/101496.webp',
     name: 'Mattifying Day Cream NP',
     price: 65,
     ean: 7319861014969,
@@ -503,7 +503,7 @@ export let Data: DataType[] = [
   {
     id: 26,
     artnr: 101497,
-    img: 'https://d3studio.se/react/img/400px/101497.png',
+    img: 'https://d3studio.se/react/img/400px/101497.webp',
     name: 'Mattifying Night Cream NP',
     price: 78,
     ean: 7319861014976,
@@ -522,7 +522,7 @@ export let Data: DataType[] = [
   {
     id: 27,
     artnr: 101475,
-    img: 'https://d3studio.se/react/img/400px/101475.png',
+    img: 'https://d3studio.se/react/img/400px/101475.webp',
     name: 'Moisturising Day Cream NP',
     price: 95,
     ean: 7319861014754,
@@ -542,7 +542,7 @@ export let Data: DataType[] = [
   {
     id: 28,
     artnr: 101476,
-    img: 'https://d3studio.se/react/img/400px/101476.png',
+    img: 'https://d3studio.se/react/img/400px/101476.webp',
     name: 'Moisturising Night Cream NP',
     price: 102,
     ean: 7319861014761,
@@ -562,7 +562,7 @@ export let Data: DataType[] = [
   {
     id: 29,
     artnr: 101487,
-    img: 'https://d3studio.se/react/img/400px/101487.png',
+    img: 'https://d3studio.se/react/img/400px/101487.webp',
     name: 'Nourishing Night Cream NP',
     price: 119,
     ean: 7319861014877,
@@ -581,7 +581,7 @@ export let Data: DataType[] = [
   {
     id: 30,
     artnr: 101477,
-    img: 'https://d3studio.se/react/img/400px/101477.png',
+    img: 'https://d3studio.se/react/img/400px/101477.webp',
     name: 'Rebalancing Cleansing Foam P',
     price: 125,
     ean: 7319861014778,
@@ -600,7 +600,7 @@ export let Data: DataType[] = [
   {
     id: 31,
     artnr: 101478,
-    img: 'https://d3studio.se/react/img/400px/101478.png',
+    img: 'https://d3studio.se/react/img/400px/101478.webp',
     name: 'Rebalancing Skin Toner P',
     price: 220,
     ean: 7319861014785,
@@ -620,7 +620,7 @@ export let Data: DataType[] = [
   {
     id: 32,
     artnr: 101473,
-    img: 'https://d3studio.se/react/img/400px/101473.png',
+    img: 'https://d3studio.se/react/img/400px/101473.webp',
     name: 'Refreshing Cleansing Gel NP',
     price: 220,
     ean: 7319861014730,
@@ -639,7 +639,7 @@ export let Data: DataType[] = [
   {
     id: 33,
     artnr: 101474,
-    img: 'https://d3studio.se/react/img/400px/101474.png',
+    img: 'https://d3studio.se/react/img/400px/101474.webp',
     name: 'Refreshing Toner NP',
     price: 250,
     ean: 7319861014747,
@@ -659,7 +659,7 @@ export let Data: DataType[] = [
   {
     id: 34,
     artnr: 101505,
-    img: 'https://d3studio.se/react/img/400px/101505.png',
+    img: 'https://d3studio.se/react/img/400px/101505.webp',
     name: 'Self Tanning Face Cream NP',
     price: 75,
     ean: 7319861015058,
@@ -679,7 +679,7 @@ export let Data: DataType[] = [
   {
     id: 35,
     artnr: 101483,
-    img: 'https://d3studio.se/react/img/400px/101483.png',
+    img: 'https://d3studio.se/react/img/400px/101483.webp',
     name: 'Soft & Soothing Cleansing Lotion NP',
     price: 190,
     ean: 7319861014839,
@@ -699,7 +699,7 @@ export let Data: DataType[] = [
   {
     id: 36,
     artnr: 101484,
-    img: 'https://d3studio.se/react/img/400px/101484.png',
+    img: 'https://d3studio.se/react/img/400px/101484.webp',
     name: 'Soft & Soothing Toner NP',
     price: 165,
     ean: 7319861014846,
@@ -718,7 +718,7 @@ export let Data: DataType[] = [
   {
     id: 37,
     artnr: 101506,
-    img: 'https://d3studio.se/react/img/400px/101506.png',
+    img: 'https://d3studio.se/react/img/400px/101506.webp',
     name: 'Soft Beige BB Cream NP',
     price: 80,
     ean: 7319861015065,
@@ -738,7 +738,7 @@ export let Data: DataType[] = [
   {
     id: 38,
     artnr: 101503,
-    img: 'https://d3studio.se/react/img/400px/101503.png',
+    img: 'https://d3studio.se/react/img/400px/101503.webp',
     name: 'Soft Bronze Day Cream NP',
     price: 75,
     ean: 7319861015034,
@@ -758,7 +758,7 @@ export let Data: DataType[] = [
   {
     id: 39,
     artnr: 101488,
-    img: 'https://d3studio.se/react/img/400px/101488.png',
+    img: 'https://d3studio.se/react/img/400px/101488.webp',
     name: 'Ultra Soft Cleansing Milk P',
     price: 175,
     ean: 7319861014884,
@@ -778,7 +778,7 @@ export let Data: DataType[] = [
   {
     id: 40,
     artnr: 101490,
-    img: 'https://d3studio.se/react/img/400px/101490.png',
+    img: 'https://d3studio.se/react/img/400px/101490.webp',
     name: 'Ultra Soft Toner P',
     price: 175,
     ean: 7319861014907,
