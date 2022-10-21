@@ -16,7 +16,12 @@ const ProductCard: FC<IProductCard> = ({
 }) => {
   let [quantity, setQuantity] = useState(qty);
   return (
-    <a href={`/produkt/${id}`} className={styles.product_container}>
+    <a
+      href={`/produkt/${id}`}
+      className={styles.product_container}
+      property='contentUrl'
+      typeof='schema:Product'
+    >
       {label && (
         <span className={styles.ny} aria-hidden='true'>
           {label}
@@ -26,11 +31,12 @@ const ProductCard: FC<IProductCard> = ({
         className={`${styles.product__Img__Area} ${colorgroup}`}
         aria-label={`Picture of ${name}`}
         role='img'
+        resource={img}
       >
         <img
           className={`${styles.product__img} img-fluid besok add_to_cart`}
           src={img}
-          alt={`${name}`}
+          alt={`${shortdesc}`}
           aria-label={`${shortdesc}`}
         />
       </div>
@@ -38,21 +44,32 @@ const ProductCard: FC<IProductCard> = ({
         className={styles.productItem__content}
         aria-label='Product name, short description and price area'
       >
-        <span aria-label='Product Name' className={styles.pcard_title}>
+        <span
+          aria-label='Product Name'
+          className={styles.pcard_title}
+          property='schema:name'
+        >
           <Text
             fontSize={styles.pcard_title}
             text={`${name}`}
             aria-label={`${name}`}
           />
         </span>
-        <span aria-label='Product short description'>
+        <span
+          aria-label='Product short description'
+          property='schema:description'
+        >
           <p className={styles.product_desc_1}>{`${shortdesc}`}</p>
         </span>
-        <span aria-label='Product price' className={styles.produkt_price}>
+        <span
+          aria-label='Product price'
+          className={styles.produkt_price}
+          property='schema:price'
+        >
           <span className={styles.price}>
             <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
           </span>
-          <span className={styles.buy_button} >
+          <span className={styles.buy_button}>
             <span className={styles.buy_button_display}>
               <Btn
                 bgcolor='product_card_btn'

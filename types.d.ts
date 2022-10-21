@@ -25,7 +25,7 @@ interface IProductCard {
   shortdesc?: String;
   label: String;
   colorgroup?: String;
-  slug?: String;
+  slug: String;
   qty: number;
 }
 

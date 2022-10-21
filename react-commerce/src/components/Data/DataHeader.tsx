@@ -9,8 +9,8 @@ export const Logo: CompanyLogo[] = [
 export const NavItem: Inav[] = [
   {
     name: 'HEM',
-    path: '/',
-    slug: '',
+    path: '/home',
+    slug: 'home',
   },
   {
     name: 'PRODUKT',

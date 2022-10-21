@@ -57,6 +57,7 @@ const Home = () => {
                     shortdesc,
                     label,
                     qty,
+                    slug,
                   } = item;
                   return (
                     <ProductCard
@@ -69,6 +70,7 @@ const Home = () => {
                       shortdesc={shortdesc}
                       label={label}
                       qty={qty}
+                      slug={slug}
                     />
                   );
                 })}

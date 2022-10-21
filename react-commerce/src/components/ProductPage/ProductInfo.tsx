@@ -4,21 +4,36 @@ import styles from './ProductInfo.module.scss';
 
 const ProductInfo: FC<ProductInfoProps> = ({ desc, ingredient }) => {
   return (
-    <div className={styles.main_content_block_1}>
+    <article
+      className={styles.main_content_block_1}
+      aria-label='Produkt beskrivning och Ingredienser '
+    >
       <div className={styles.description}>
-        <div className={styles.description_title}>Om produkt</div>
+        <div className={styles.description_title} aria-label='Om Produkt'>
+          Om produkt
+        </div>
       </div>
-      <div className={styles.product_description_block}>
+      <div
+        className={styles.product_description_block}
+        aria-label='Produkt beskrivning'
+      >
         <div className={styles.beskrivning}>
           <h6 className={styles.rubrik}>Beskrivning:</h6>
           {desc}
         </div>
-        <div>
-          <h6 className={styles.rubrik}>Ingredients:</h6>
-          <div className={styles.beskrivning}>{ingredient}</div>
+        <div aria-label='Produkt ingredienser'>
+          <h6
+            className={styles.rubrik}
+            aria-label='Produkt ingredienser rubrik'
+          >
+            Ingredienser:
+          </h6>
+          <div className={styles.beskrivning} aria-label='ingredienser'>
+            {ingredient}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

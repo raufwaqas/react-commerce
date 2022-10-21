@@ -20,7 +20,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/Home' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/omoss' element={<Omoss />} />
         <Route path='/produkt/:id' element={<ProductDetails />} />
         <Route path='/produkt' element={<Produkt />} />

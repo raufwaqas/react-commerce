@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { FC, useState, useEffect } from 'react';
 import { NavItem, Logo } from '../Data/DataHeader';
 import styles from './Nav.module.scss';
@@ -13,6 +12,7 @@ const Nav: FC = () => {
       await axiosInstance
         .get(`/carts`)
         .then((res) => {
+          console.log('data', res?.data.length);
           setCardItem(res?.data.length);
         })
         .catch((err) => console.log(err));
@@ -20,8 +20,8 @@ const Nav: FC = () => {
   }, []);
 
   return (
-    <header className={styles.header} >
-      <nav className={styles.navbar} >
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
         <a href={NavItem[0].path} className={styles.brand}>
           <img
             src={Logo[0].url}
@@ -32,61 +32,46 @@ const Nav: FC = () => {
           />
         </a>
         <input
-          type="hidden"
+          type='checkbox'
           id={styles.nav}
           className={styles.hidden}
-          
-          
+          aria-label='Navigation'
         />
-        <label htmlFor='nav' className={styles.nav_toggle} aria-hidden='true'>
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+        <div
+          // htmlFor='nav'
+          className={styles.nav_toggle}
+          aria-label='Open and close button on mobile menu'
+        >
+          <span className={styles.hide} aria-hidden='true'></span>
+          <span className={styles.hide} aria-hidden='true'></span>
+          <span className={styles.hide} aria-hidden='true'></span>
+        </div>
         <div
           className={styles.wrapper}
           aria-label='navigation'
           role='navigation'
         >
-          <ol className={styles.menu} aria-label='navigation bar'>
+          <ul className={styles.menu} aria-label='navigation bar'>
             <li className={styles.menu_item} aria-label={NavItem[0].name}>
-              <a href={NavItem[0].path} role="link">
-                {NavItem[0].name}
-              </a>
+              <a href={NavItem[0].path}>{NavItem[0].name}</a>
             </li>
             <li className={styles.menu_item} aria-label={NavItem[1].name}>
-              <a href={NavItem[1].path} role="link">
-                {NavItem[1].name}
-              </a>
+              <a href={NavItem[1].path}>{NavItem[1].name}</a>
             </li>
             <li className={styles.menu_item} aria-label={NavItem[2].name}>
-              <a href={NavItem[2].path} role="link">
-                {NavItem[2].name}
-              </a>
+              <a href={NavItem[2].path}>{NavItem[2].name}</a>
             </li>
             <li className={styles.menu_item} aria-label={NavItem[3].name}>
-              <a href={NavItem[3].path} role="link">
-                {NavItem[3].name}
-              </a>
+              <a href={NavItem[3].path}>{NavItem[3].name}</a>
             </li>
-          </ol>
+          </ul>
         </div>
-        <div
-          className='header__cartblock'
-          // role='navigation'
-          // aria-label='Varkorg'
-          // aria-details='Varkorg'
-        >
-          <Link to='/cart' aria-label="Click here to visit cart page">
-            
-            <span className='bi-basket2' ></span>
-            
+        <div className='header__cartblock'>
+          <Link to='/cart' aria-label='Go to cart page'>
+            <span className='bi-basket2'></span>
           </Link>
 
-          <span className='shopping-icon' aria-label='Cart quantity'>
-            {cardItem}
-          </span>
-         
+          <span className='shopping-icon'>{cardItem}</span>
         </div>
       </nav>
     </header>
