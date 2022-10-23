@@ -3,7 +3,7 @@ import { ISocialmedia } from '../../../../types';
 export const socialmedia: ISocialmedia[] = [
   {
     url: 'https://d3studio.se/react/img/icons/fb.svg',
-    title: 'Facbook',
+    title: 'Facebook',
     link: 'https://www.facebook.com',
   },
   {

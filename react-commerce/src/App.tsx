@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ThankYou from './pages/ThankYou/ThankYou';
 import {
   Home,
   ProductDetails,
@@ -27,6 +28,7 @@ function App() {
         <Route path='/kontakt' element={<Kontakt />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/thank-you' element={<ThankYou />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />

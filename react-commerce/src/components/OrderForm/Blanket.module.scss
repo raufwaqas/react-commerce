@@ -86,14 +86,22 @@ label {
 }
 
 .btn {
-  color: $white;
-  padding: 12px;
-  margin: 10px 0;
+  background-color: $darkpink;
+  width: 160px !important;
+  height: 65px;
+  margin: 10px 0px 0px 20px;
   border: none;
-
-  border-radius: 3px;
+  border-radius: 0px;
   cursor: pointer;
   font-size: 17px;
+}
+.btn a {
+  width: 165px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
 }
 
 @media (max-width: 800px) {

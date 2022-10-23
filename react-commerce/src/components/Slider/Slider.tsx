@@ -1,22 +1,27 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import { Carousel } from '../Data/SliderDB';
 import Btn from '../Buttons/Btn';
+import { Link } from 'react-router-dom';
 
-const Slider:FC = () => {
+const Slider: FC = () => {
   return (
     <section
       id='carouselExampleCaptions'
       className='carousel slide'
       data-bs-ride='false'
+      aria-label='Product presentation area'
     >
-      <div className='carousel-indicators'>
+      <div
+        className='carousel-indicators'
+        aria-label='Product presentation area'
+      >
         <button
           type='button'
           data-bs-target='#carouselExampleCaptions'
           data-bs-slide-to='0'
           className='active'
           aria-current='true'
-          aria-label={Carousel[0].name}
+          aria-label='product presentation'
         ></button>
         <button
           type='button'
@@ -30,7 +35,7 @@ const Slider:FC = () => {
           <img
             src={Carousel[0].img}
             className='d-block slide-right'
-            alt={Carousel[0].name}
+            alt='bilder av model'
           />
           <div className='carousel-caption d-md-block'>
             <h2>{Carousel[0].name}</h2>
@@ -38,10 +43,12 @@ const Slider:FC = () => {
             <img
               src={Carousel[0].produktbild}
               className='pbild'
-              alt={Carousel[0].name}
+              alt={`bilder av ${Carousel[0].name}`}
             />
             <br />
-            <Btn bgcolor='primary' onClick={() => {}} text='KÖP NU' />
+            <Link to={`/produkt/6344670c640a2b589120ca4d`}>
+              <Btn bgcolor='primary' text='KÖP NU' aria-label='köp nu' />
+            </Link>
           </div>
         </div>
         <div className={`carousel-item ${Carousel[1].colorgroup}`}>
@@ -59,7 +66,9 @@ const Slider:FC = () => {
               alt={Carousel[1].name}
             />
             <br />
-            <Btn bgcolor='primary' onClick={() => {}} text='KÖP NU' />
+            <Link to={`/produkt/63446840640a2b589120ca8d`}>
+              <Btn bgcolor='primary' text='KÖP NU' />
+            </Link>
           </div>
         </div>
       </div>
@@ -72,6 +81,7 @@ const Slider:FC = () => {
         <span className='carousel-control-prev-icon' aria-hidden='true'></span>
         <span className='visually-hidden'>Previous</span>
       </button>
+
       <button
         className='carousel-control-next'
         type='button'

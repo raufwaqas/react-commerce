@@ -9,7 +9,7 @@ export const brand: Ibrand[] = [
 export let payment: IPaymentIcon[] = [
   {
     icon: 'https://d3studio.se/react/img/icons/visa.svg',
-    title: 'Vis Card',
+    title: 'Visa Card',
   },
   {
     icon: 'https://d3studio.se/react/img/icons/master-card.svg',

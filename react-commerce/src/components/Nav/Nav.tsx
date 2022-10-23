@@ -29,6 +29,7 @@ const Nav: FC = () => {
             alt={Logo[0].title}
             title={Logo[0].title}
             className='header__logo--image'
+            aria-label='Company loga du kan även knappa här för besök första sida'
           />
         </a>
         <input
@@ -40,7 +41,6 @@ const Nav: FC = () => {
         <div
           // htmlFor='nav'
           className={styles.nav_toggle}
-          aria-label='Open and close button on mobile menu'
         >
           <span className={styles.hide} aria-hidden='true'></span>
           <span className={styles.hide} aria-hidden='true'></span>
@@ -52,7 +52,7 @@ const Nav: FC = () => {
           role='navigation'
         >
           <ul className={styles.menu} aria-label='navigation bar'>
-            <li className={styles.menu_item} aria-label={NavItem[0].name}>
+            <li className={styles.menu_item} aria-label='Besök Första sida'>
               <a href={NavItem[0].path}>{NavItem[0].name}</a>
             </li>
             <li className={styles.menu_item} aria-label={NavItem[1].name}>
@@ -66,8 +66,8 @@ const Nav: FC = () => {
             </li>
           </ul>
         </div>
-        <div className='header__cartblock'>
-          <Link to='/cart' aria-label='Go to cart page'>
+        <div className='header__cartblock' aria-label='Varkorg'>
+          <Link to='/cart' aria-label='Varkorg'>
             <span className='bi-basket2'></span>
           </Link>
 

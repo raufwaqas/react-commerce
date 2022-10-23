@@ -29,7 +29,7 @@ const ProductCard: FC<IProductCard> = ({
       )}
       <div
         className={`${styles.product__Img__Area} ${colorgroup}`}
-        aria-label={`Picture of ${name}`}
+        aria-label={`bilder av ${name}`}
         role='img'
         resource={img}
       >
@@ -42,10 +42,10 @@ const ProductCard: FC<IProductCard> = ({
       </div>
       <div
         className={styles.productItem__content}
-        aria-label='Product name, short description and price area'
+        aria-label='Produkt Namn, Kort beskrivning och priser'
       >
         <span
-          aria-label='Product Name'
+          aria-label='Produkt Namn'
           className={styles.pcard_title}
           property='schema:name'
         >
@@ -59,7 +59,10 @@ const ProductCard: FC<IProductCard> = ({
           aria-label='Product short description'
           property='schema:description'
         >
-          <p className={styles.product_desc_1}>{`${shortdesc}`}</p>
+          <p
+            className={styles.product_desc_1}
+            aria-label='Product short description'
+          >{`${shortdesc}`}</p>
         </span>
         <span
           aria-label='Product price'
@@ -67,7 +70,7 @@ const ProductCard: FC<IProductCard> = ({
           property='schema:price'
         >
           <span className={styles.price}>
-            <Text text={`${price} Kr`} aria-label={`${price} Kr`} />
+            <Text text={`${price}KR`} aria-label={`${price} Kr`} />
           </span>
           <span className={styles.buy_button}>
             <span className={styles.buy_button_display}>

@@ -3,8 +3,9 @@ import { payment } from '../Data/DataFooter';
 import styles from '../Footer/Footer.module.scss';
 import style from './Blanket.module.scss';
 import { axiosInstance } from '../../axios/axiosHttps';
+import { Link } from 'react-router-dom';
 
-const Blanket: FC = () => {
+const Blanket: FC = (_Id) => {
   const [address, setAddress] = useState('');
   const [postcode, setPostcode] = useState('');
   const [city, setCity] = useState('');
@@ -12,7 +13,7 @@ const Blanket: FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const onSubmit = async (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const cart = (await axiosInstance.get(`/carts`)).data;
     const userId = cart[0].userId;
@@ -54,7 +55,7 @@ const Blanket: FC = () => {
       <div className={style.row}>
         <div className={style.col_75}>
           <div className={style.container}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={style.row}>
                 <div className={style.col_50}>
                   <h3>Leveransuppgifter</h3>
@@ -206,12 +207,16 @@ const Blanket: FC = () => {
                     </div>
                   </div>
                 </div>
-                <input
+
+                <button
                   type='submit'
-                  onClick={onSubmit}
-                  value='Slutför köp'
+                  onClick={handleSubmit}
                   className={style.btn}
-                />
+                >
+                  <Link to='/thank-you' className={style.btn_link}>
+                    Slutför köp
+                  </Link>
+                </button>
               </div>
             </form>
           </div>

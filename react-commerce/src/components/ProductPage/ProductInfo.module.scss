@@ -4,9 +4,9 @@
 
 .main_content_block_1 {
   min-width: 320px;
-  max-width: 980px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: $block-padding;
+  padding: 20px 0px 40px 0px;
 }
 .description {
   display: flex;
@@ -47,6 +47,11 @@
   letter-spacing: 0.4px;
   color: $text;
 }
+@media only screen and (max-width: 1024px) {
+  .main_content_block_1 {
+    padding: 0px 40px 40px 40px;
+  }
+}
 @media (max-width: 960px) {
   .main_content_block_1 {
     width: 460px;
@@ -56,7 +61,6 @@
   .main_content_block_1 {
     width: 100vw;
     margin: 0 auto;
-    padding: 20px;
-}
-  
+    padding: 0px 40px 40px 40px;
+  }
 }

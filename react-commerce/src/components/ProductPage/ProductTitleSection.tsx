@@ -5,7 +5,6 @@ import { socialmedia } from '../Data/social';
 import { useState } from 'react';
 import { IProductTitleSectionProps } from '../../../../types';
 
-
 const ProductTitleSection: FC<IProductTitleSectionProps> = ({
   name,
   artnr,
@@ -22,7 +21,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
   return (
     <section
       className='product-section-main'
-      aria-label='Product information section'
+      aria-label='produkt information section'
       role='contentinfo'
     >
       <div className='product-section-area'>
@@ -43,7 +42,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
             fontSize='h2'
             fontWeight='font-bold'
             text={`${price} KR`}
-            aria-label={`${price} KR`}
+            aria-label={`${price}KR`}
           />
         </div>
         <div
@@ -91,12 +90,13 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
           </a>
           <hr aria-hidden='true' />
         </div>
-        <div className='container-quantity'>
+        <div className='container-quantity' aria-label='antal section'>
           <div className='container-qty'>
             <Btn
               onClick={() => quantity !== 1 && setQuantity((prev) => prev - 1)}
               bgcolor='small-light-grey'
               text='<'
+              aria-label='minska antal'
             />
             <Text
               fontSize='p'
@@ -109,6 +109,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               onClick={() => setQuantity((prev) => prev + 1)}
               bgcolor='small-dark-grey'
               text='>'
+              aria-label='öka kvantiteten'
             />
           </div>
         </div>
@@ -123,7 +124,7 @@ const ProductTitleSection: FC<IProductTitleSectionProps> = ({
               text='Ta bort'
             />
           ) : (
-            <Btn 
+            <Btn
               bgcolor='dark'
               leftIcon='bi-basket'
               onClick={() => {

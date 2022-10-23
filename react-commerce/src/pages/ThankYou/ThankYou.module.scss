@@ -1,0 +1,22 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixin' as *;
+@use '../../scss/Globals.scss' as *;
+
+.thankYou_section {
+  width: 100%;
+  height: 600px;
+  background-color: $mediumpink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thankYou_section_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  max-width: 80vw;
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+}
