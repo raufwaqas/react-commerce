@@ -1,7 +1,7 @@
-# Ecommerce - Foo Café assignment
+# Ecommerce
 
 ```
-![alt text](https://d3studio.se/react/prototype.png)
+![](https://d3studio.se/react/prototype.png)
 
 # setup
 
