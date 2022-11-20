@@ -1,8 +1,5 @@
 # Ecommerce - Foo Café assignment
 
-```Live view url
-https://waqas-commerce.vercel.app/
-
 ```
 ![](https://d3studio.se/react/prototype.png)
 
