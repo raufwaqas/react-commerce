@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProductPage from '../../components/ProductPage/ProductPage';
 import { nanoid } from 'nanoid';
 import { axiosInstance } from '../../axios/axiosHttps';
+import { store } from '../../store/index';
 
 const ProductDetails = () => {
   const params = useParams();
@@ -58,9 +59,12 @@ const ProductDetails = () => {
           name: name,
         },
       })
-        .then((res) => {
+        .then(async (res) => {
           console.log('successfully added to cart');
           setIsSelected(true);
+          // Update cart count
+          const cartRes = await axiosInstance.get(`/carts`);
+          store.cartState.setCartCount(cartRes?.data.length || 0);
         })
         .catch((err) => {
           setIsSelected(false);
@@ -70,10 +74,13 @@ const ProductDetails = () => {
       // console.log('remove item');
       await axiosInstance
         .delete(`/carts/${params?.id}`)
-        .then((res) => {
+        .then(async (res) => {
           console.log('successfully removed item from cart');
           setIsSelected(false);
           setQuantity(quantity);
+          // Update cart count
+          const cartRes = await axiosInstance.get(`/carts`);
+          store.cartState.setCartCount(cartRes?.data.length || 0);
         })
         .catch((err) => {
           console.log(err);

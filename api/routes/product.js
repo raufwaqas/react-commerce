@@ -1,4 +1,5 @@
-const Product = require("../models/Product");
+const fs = require("fs");
+const path = require("path");
 const {
   verifyToken,
   verifyTokenAndAuthorization,
@@ -7,14 +8,41 @@ const {
 
 const router = require("express").Router();
 
-//CREATE
-
-router.post("/", async (req, res) => {
-  const newProduct = new Product(req.body);
-
+// Helper function to read products from JSON file
+const readProducts = () => {
   try {
-    const savedProduct = await newProduct.save();
-    res.status(200).json(savedProduct);
+    const filePath = path.join(__dirname, "../data/products.json");
+    const data = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(data);
+  } catch (err) {
+    console.error("Error reading products:", err);
+    return [];
+  }
+};
+
+// Helper function to write products to JSON file
+const writeProducts = (products) => {
+  try {
+    const filePath = path.join(__dirname, "../data/products.json");
+    fs.writeFileSync(filePath, JSON.stringify(products, null, 2), "utf8");
+    return true;
+  } catch (err) {
+    console.error("Error writing products:", err);
+    return false;
+  }
+};
+
+//CREATE
+router.post("/", async (req, res) => {
+  try {
+    const products = readProducts();
+    const newProduct = {
+      ...req.body,
+      _id: req.body._id || req.body.artnr?.toString() || Date.now().toString(),
+    };
+    products.push(newProduct);
+    writeProducts(products);
+    res.status(200).json(newProduct);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -23,14 +51,22 @@ router.post("/", async (req, res) => {
 //UPDATE
 router.put("/:id", async (req, res) => {
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(
-      req.params.id,
-      {
-        $set: req.body,
-      },
-      { new: true }
+    const products = readProducts();
+    const productIndex = products.findIndex(
+      (p) => p._id === req.params.id || p.artnr?.toString() === req.params.id
     );
-    res.status(200).json(updatedProduct);
+
+    if (productIndex === -1) {
+      return res.status(404).json("Product not found");
+    }
+
+    products[productIndex] = {
+      ...products[productIndex],
+      ...req.body,
+      _id: products[productIndex]._id,
+    };
+    writeProducts(products);
+    res.status(200).json(products[productIndex]);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,7 +75,16 @@ router.put("/:id", async (req, res) => {
 //DELETE
 router.delete("/:id", async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    const products = readProducts();
+    const filteredProducts = products.filter(
+      (p) => p._id !== req.params.id && p.artnr?.toString() !== req.params.id
+    );
+
+    if (products.length === filteredProducts.length) {
+      return res.status(404).json("Product not found");
+    }
+
+    writeProducts(filteredProducts);
     res.status(200).json("Product has been deleted...");
   } catch (err) {
     res.status(500).json(err);
@@ -49,7 +94,15 @@ router.delete("/:id", async (req, res) => {
 //GET PRODUCT
 router.get("/find/:id", async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const products = readProducts();
+    const product = products.find(
+      (p) => p._id === req.params.id || p.artnr?.toString() === req.params.id
+    );
+
+    if (!product) {
+      return res.status(404).json("Product not found");
+    }
+
     res.status(200).json(product);
   } catch (err) {
     res.status(500).json(err);
@@ -61,18 +114,15 @@ router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
   try {
-    let products;
+    let products = readProducts();
 
     if (qNew) {
-      products = await Product.find().sort({ createdAt: -1 }).limit(1);
+      // Sort by _id (which is based on artnr) descending and limit to 1
+      products = products
+        .sort((a, b) => (b._id || "").localeCompare(a._id || ""))
+        .slice(0, 1);
     } else if (qCategory) {
-      products = await Product.find({
-        categories: {
-          $in: [qCategory],
-        },
-      });
-    } else {
-      products = await Product.find();
+      products = products.filter((p) => p.category === qCategory);
     }
 
     res.status(200).json(products);

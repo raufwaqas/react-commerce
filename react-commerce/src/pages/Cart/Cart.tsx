@@ -8,6 +8,7 @@ import CartSectionHeader from '../../components/CartProductSection/CartSectionHe
 import CartTotalSection from '../../components/CartProductSection/CartTotalSection';
 import Btn from '../../components/Buttons/Btn';
 import { Link } from 'react-router-dom';
+import { store } from '../../store/index';
 
 const Cart = () => {
   const [cartData, setCartData] = useState<any>([]);
@@ -30,6 +31,7 @@ const Cart = () => {
         .get(`/carts`)
         .then((res) => {
           setCartData(res?.data);
+          store.cartState.setCartCount(res?.data.length || 0);
         })
         .catch((err) => console.log(err));
     })();
@@ -40,11 +42,14 @@ const Cart = () => {
       if (cartData[i].productId === id) {
         axiosInstance
           .put(`/carts/${cartData[i]._id}`, { ...cartData[i], quantity: quant })
-          .then((res) => {
+          .then(async (res) => {
             const newCart = cartData;
             newCart[i] = res.data;
             setCartData(newCart);
             setUpdateCart((prev: any) => !prev);
+            // Update cart count (in case quantity changes affect count)
+            const cartRes = await axiosInstance.get(`/carts`);
+            store.cartState.setCartCount(cartRes?.data.length || 0);
           })
           .catch((err) => console.log(err));
         break;
@@ -58,6 +63,7 @@ const Cart = () => {
         .get(`/carts`)
         .then((res) => {
           setCartData(res?.data);
+          store.cartState.setCartCount(res?.data.length || 0);
         })
         .catch((err) => console.log(err));
     })();

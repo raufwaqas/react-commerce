@@ -12,12 +12,17 @@ const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("DB Connection Successfull!"))
-  .catch((err) => {
-    console.log(err);
-  });
+// MongoDB connection (optional - products use JSON file)
+if (process.env.MONGO_URL) {
+  mongoose
+    .connect(process.env.MONGO_URL)
+    .then(() => console.log("MongoDB Connection Successfull!"))
+    .catch((err) => {
+      console.log("MongoDB connection failed (using JSON for products):", err.message);
+    });
+} else {
+  console.log("MongoDB not configured - using JSON file for products");
+}
 
 app.use(cors());
 app.use(express.json());

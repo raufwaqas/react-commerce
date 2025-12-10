@@ -3,6 +3,7 @@ import { IcartSection } from '../../../../types';
 import styles from './CartProductSection.module.scss';
 import { axiosInstance } from '../../axios/axiosHttps';
 import style from './CartSectionHeader.module.scss';
+import { store } from '../../store/index';
 
 const CartProductSection: FC<IcartSection> = ({
   img,
@@ -14,16 +15,24 @@ const CartProductSection: FC<IcartSection> = ({
   total,
   onClick,
   handleCounter,
+  onDelete,
 }) => {
   let [quantity, setQuantity] = useState(qty);
   
-  const onDelete = () => {
+  const handleDelete = () => {
     console.log(_Id);
     (async () => {
       await axiosInstance
         .delete(`/carts/${_Id}`)
-        .then((res) => {
+        .then(async (res) => {
           console.log('res', res?.data);
+          // Update cart count
+          const cartRes = await axiosInstance.get(`/carts`);
+          store.cartState.setCartCount(cartRes?.data.length || 0);
+          // Call parent's onDelete callback to refresh cart data
+          if (onDelete) {
+            onDelete();
+          }
         })
         .catch((err) => console.log(err));
     })();
@@ -73,7 +82,7 @@ const CartProductSection: FC<IcartSection> = ({
               <img
                 src='https://d3studio.se/react/img/icons/bin.svg'
                 alt='Ta bort'
-                onClick={onDelete}
+                onClick={handleDelete}
               />
             </button>
           </div>

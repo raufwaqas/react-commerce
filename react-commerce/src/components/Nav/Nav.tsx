@@ -1,23 +1,32 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { NavItem, Logo } from '../Data/DataHeader';
 import styles from './Nav.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { axiosInstance } from '../../axios/axiosHttps';
+import { store } from '../../store/index';
 
 const Nav: FC = () => {
-  const [cardItem, setCardItem] = useState(0);
+  const location = useLocation();
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
-    (async () => {
-      await axiosInstance
-        .get(`/carts`)
-        .then((res) => {
-          console.log('data', res?.data.length);
-          setCardItem(res?.data.length);
-        })
-        .catch((err) => console.log(err));
-    })();
-  }, []);
+    const fetchCartCount = async () => {
+      try {
+        const res = await axiosInstance.get(`/carts`);
+        const count = res?.data.length || 0;
+        setCartCount(count);
+        store.cartState.setCartCount(count);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchCartCount();
+    // Refresh cart count when route changes (e.g., after adding/removing items)
+    const interval = setInterval(fetchCartCount, 2000); // Check every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [location.pathname]);
 
   return (
     <header className={styles.header}>
@@ -71,7 +80,7 @@ const Nav: FC = () => {
             <span className='bi-basket2'></span>
           </Link>
 
-          <span className='shopping-icon'>{cardItem}</span>
+          <span className='shopping-icon'>{cartCount}</span>
         </div>
       </nav>
     </header>
